@@ -1,0 +1,19 @@
+{
+  "question_id": 4,
+  "Question": "Two identical, neutral conducting spheres are mounted on plastic handles and kept close to each other. A positively charged rod is brought close to the first sphere without touching it while the second sphere is grounded. Draw the charges on the spheres. After the grounding is removed, draw the charges on the spheres. Finally, the positively charged rod is also removed. Draw the resulting charges on the sphere.",
+  "Question_image": "Yes",
+  "Answer": ["The side of the first sphere close to the positively charged rod has a negative charge and the other side has a positive charge. The side of the second sphere close to the positive side of the first sphere develops a negative charge and the other side of the second sphere, which is grounded, has no charge", 
+              "The side of the first sphere close to the positively charged rod has a negative charge and the other side has a positive charge. The side of the second sphere close to the positive side of the first sphere develops a large negative charge and the other side of the second sphere has a small negative charge", 
+              "The second sphere has a negative charge distributed across it's surface. The side of the first sphere close to the second sphere has a positive charge and the other side has a negative charge"],
+  "Answer_type": "single_correct_descriptive_image_multi_part",
+  "required_concepts": [
+      ["Are charges conserved, i.e., they cannot be created or destroyed?", "Do insulators prevent charges from freely flowing within them?"],
+      ["Do positive charges attract negative charges?", "Do conductors allow charges to flow freely within them?", "Does grounding allow excess charge to be transferred out?"]
+  ],
+  "known_concepts": [
+      "metal sphere is a conductor",
+      "plastic is a insulator",
+      "air is an insulator"
+  ],
+  "not_required_concepts": ["Is the separation of charges in a material called polarization?", "Is the transfer of charges without contact called induction?"]
+}
