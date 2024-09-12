@@ -1,0 +1,19 @@
+question_json = {
+    "question_id": 3,
+    "Question": "A neutral metal sphere is placed between two charged parallel metal plates. One plate has a positive charge and the other has a negative charge. What will be the charge on the sphere after equilibrium? Draw the charges on the sphere.",
+    "Question_image": "",
+    "Answer": ["No overall charge", "The sphere will have a negative charge on the side closer to the positive plate and a positive charge on the side closer to the negative plate"],
+    "Answer_type": "single_correct_descriptive_image_multi_part",
+    "required_concepts": [
+        ["Are charges conserved, i.e., they cannot be created or destroyed?",
+         "Do insulators prevent charges from freely flowing within them?"],
+        ["Do positive charges attract negative charges?",
+         "Do conductors allow charges to flow freely within them?"]
+    ],
+    "known_concepts": [
+        "metal sphere is a conductor",
+        "metal plate is a conductor",
+        "air is an insulator"
+    ],
+    "not_required_concepts": ["Is the separation of charges in a material called polarization?"]
+}
