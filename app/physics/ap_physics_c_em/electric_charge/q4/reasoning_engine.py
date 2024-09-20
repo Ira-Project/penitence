@@ -8,12 +8,6 @@ from .images import *
 async def compute_q4(input: InputModel):
 
     learner_explanation = input.explanation
-    tagged_concepts_dict = input.concepts
-    if not tagged_concepts_dict or not learner_explanation:
-        return {
-            'status': 500,
-            'body': 'Please send valid concept dictionaries and a valid explanation'
-        }
 
     # Initialize the dictionaries
     required_concepts_dict = {}
@@ -26,12 +20,50 @@ async def compute_q4(input: InputModel):
     for concept in question_json["not_required_concepts"]:
         not_required_concepts_dict[concept] = ""
 
+    # Convert required and not_required concepts to a list of questions
+    question_list = ""
+    for concept_question in required_concepts_dict.keys():
+        question_list = question_list + concept_question + "\n"
+    for concept_question in not_required_concepts_dict.keys():
+        question_list = question_list + concept_question + "\n"
+
+    # Get answers to the question_list
+    tagged_concepts_dict = await read_explanation(question_list, learner_explanation)
+
+    if not tagged_concepts_dict or not learner_explanation:
+        return {
+            'status': 500,
+            'body': 'Please send valid concept dictionaries and a valid explanation'
+        }
+
+    # Initialize the dictionaries
+    required_concepts_dict = {}
+    not_required_concepts_dict = {}
+    concept_status = []
+
+    # Initialize the concepts in the dictionaries
+    for concept_array in question_json["required_concepts"]:
+        for concept in concept_array:
+            required_concepts_dict[concept] = ""
+    for concept in question_json["not_required_concepts"]:
+        not_required_concepts_dict[concept] = ""
+
     # Update the dictionaries with the tagged concepts
-    for verification in tagged_concepts_dict:
-        if verification.verification_question in required_concepts_dict:
-            required_concepts_dict[verification.verification_question] = verification.verification_answer
-        elif verification.verification_question in not_required_concepts_dict:
-            not_required_concepts_dict[verification.verification_question] = verification.verification_answer
+    for verification in tagged_concepts_dict["verifications"]:
+        if verification['verification_question'] in required_concepts_dict:
+            required_concepts_dict[verification['verification_question']
+                                   ] = verification['verification_answer']
+            concept_status.append({
+                'text': verification['verification_question'],
+                'status': verification['verification_answer']
+            })
+        elif verification['verification_question'] in not_required_concepts_dict:
+            not_required_concepts_dict[verification['verification_question']
+                                       ] = verification['verification_answer']
+            concept_status.append({
+                'text': verification['verification_question'],
+                'status': verification['verification_answer']
+            })
 
     answer1 = ""
     answer2 = ""
@@ -193,6 +225,7 @@ async def compute_q4(input: InputModel):
             'isCorrect': correct,
             'working': working,
             'answer': answer,
-            'image': imageOutput
+            'image': imageOutput,
+            'concepts': concept_status
         }
     }
