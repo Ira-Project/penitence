@@ -39,7 +39,7 @@ unknown_concepts["What is the conservation of total mechanical enegry?"] = [
     "the total mechanical energy of a system/object is the sum of its kinetic and potential energy",
     "the total mechanical energy is conserved, i.e., it can neither be created nor be destroyed",
     "an isolated system/object is one that doesn't exchange any energy with it's surroundings, i.e, doesn't have any external forces acting on it",
-    "work done by external forces on a system or an object transfers energy to or from the system or the object thus, changing it's total mechanical energy",
+    "the net or total work done on a system/object is equal to the change in it's energy",
     "the total mechanical energy of an isolated system is conserved, i.e., it can neither be created nor be destroyed"
 ]
 

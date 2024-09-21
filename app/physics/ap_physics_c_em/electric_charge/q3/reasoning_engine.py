@@ -199,14 +199,14 @@ async def compute_q3(input: InputModel):
 
     print(answer)
 
-    working, answer = await output_answer(q, answer)
+    iras_answer = await output_answer(q, solution=answer)
 
     return {
         'status': 200,
         'body': {
             'isCorrect': correct,
-            'working': working,
-            'answer': answer,
+            'working': answer,
+            'answer': iras_answer,
             'image': imageOutput,
             'imageHeight': 150,
             'imageWidth': 150,

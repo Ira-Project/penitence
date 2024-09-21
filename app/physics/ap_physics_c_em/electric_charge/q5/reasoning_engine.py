@@ -132,13 +132,13 @@ async def compute_q5(input: InputModel):
     elif required_concepts_dict[r_c[0][0]] == "Unknown":
         answer = answer + "I am not sure if charges can be created or be destroyed so, I don't know how to figure out the charges on the metal ruler."
 
-    working, answer = await output_answer(q, answer)
+    iras_answer = await output_answer(q, answer)
 
     return {
         'status': 200,
         'body': {
             'isCorrect': correct,
-            'working': working,
+            'working': iras_answer,
             'answer': answer,
             'concepts': concept_status
         }

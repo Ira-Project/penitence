@@ -75,7 +75,7 @@ async def compute_q1(input: InputModel):
         answer = answer + "Based on your explanation, I understood that negative charges will repel one another."
         if required_concepts_dict[r_c[0][1]] == "Yes" and required_concepts_dict[r_c[0][2]] == "No":
             k_c.append("conductors and insulators allow free flow of charge")
-            answer = answer + "\nI also understood that conductors and insulators both allow charges to flow freely within them, so I think the negative charges present within the wollen ball and the metal sphere will try to move away from each other and come to reside on the surface."
+            answer = answer + "\nI also understood that conductors and insulators both allow charges to flow freely within them, so I think the negative charges present within the woollen ball and the metal sphere will try to move away from each other and come to reside on the surface."
         elif required_concepts_dict[r_c[0][1]] == "Yes" and required_concepts_dict[r_c[0][2]] == "Unknown":
             k_c.append("conductors allow free flow of charge")
             answer = answer + "\nI also understood that conductors allow charges to flow freely within them, so I think the negative charges present within the metal sphere will try to move away from each other and come to reside on the surface."
@@ -83,13 +83,13 @@ async def compute_q1(input: InputModel):
         elif required_concepts_dict[r_c[0][1]] == "Yes" and required_concepts_dict[r_c[0][2]] == "Yes":
             k_c.append(
                 "conductors allow free flow of charge and insulators prevent free flow of charge")
-            answer = answer + " I also understood that conductors allow charges to flow freely within them while insulators prevent charges from freely flowing within them."
-            answer = answer + " \nSo, the negative charges present within the metal sphere will move away from each other and come to reside on the surface while in case of the woollen ball, they will be unable to move away from each other and be distributed across the entire volume."
+            answer = answer + "\nI also understood that conductors allow charges to flow freely within them while insulators prevent charges from freely flowing within them."
+            answer = answer + "\nSo, the negative charges present within the metal sphere will move away from each other and come to reside on the surface while in case of the woollen ball, they will be unable to move away from each other and be distributed across the entire volume."
             correct = True
         elif required_concepts_dict[r_c[0][1]] == "No" and required_concepts_dict[r_c[0][2]] == "Yes":
             k_c.append(
                 "conductors and insulators both prevent charge from flowing freely within them")
-            answer = answer + "\nI also understood that conductors and insulators both prevent charges from flowing freely within them, so I think the negative charges present within the wollen ball and the metal sphere will be unable to move away from each other and be distributed across the entire volume."
+            answer = answer + "\nI also understood that conductors and insulators both prevent charges from flowing freely within them, so I think the negative charges present within the woollen ball and the metal sphere will be unable to move away from each other and be distributed across the entire volume."
         elif required_concepts_dict[r_c[0][1]] == "No" and required_concepts_dict[r_c[0][2]] == "Unknown":
             k_c.append(
                 "conductors prevent charge from flowing freely within them")
@@ -98,7 +98,7 @@ async def compute_q1(input: InputModel):
         elif required_concepts_dict[r_c[0][1]] == "No" and required_concepts_dict[r_c[0][2]] == "No":
             k_c.append(
                 "insulators allow free flow of charge and conductors prevent free flow of charge")
-            answer = answer + " I also understood that insulators allow charges to flow freely within them while conductors prevent charges from freely flowing within them."
+            answer = answer + "\nI also understood that insulators allow charges to flow freely within them while conductors prevent charges from freely flowing within them."
             answer = answer + " \nSo, the negative charges present within the woollen ball will move away from each other and come to reside on the surface while in case of the metal sphere, they will be unable to move away from each other and be distributed across the entire volume."
         elif required_concepts_dict[r_c[0][1]] == "Unknown" and required_concepts_dict[r_c[0][2]] == "Yes":
             k_c.append(
@@ -201,14 +201,14 @@ async def compute_q1(input: InputModel):
                 answer = "You mentioned that charges reside on the surface of the conductor. But can you explain how to come to that conclusion?" + "\n" + answer
             if not_required_concepts_dict[n_r_c[1]] == "Yes":
                 answer = "You mentioned that charges are present across the volume of an insulator. But can you explain how to come to that conclusion?" + "\n" + answer
-    working, answer = await output_answer(q, answer)
+    iras_answer = await output_answer(q, solution=answer)
 
     return {
         'status': 200,
         'body': {
             'isCorrect': correct,
-            'working': working,
-            'answer': answer,
+            'working': answer,
+            'answer': iras_answer,
             'concepts': concept_status
         }
     }

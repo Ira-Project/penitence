@@ -43,4 +43,4 @@ async def output_answer(question, solution):
         response_format={"type": "json_object"}
     )
     response_message = json.loads(response.choices[0].message.content)
-    return response_message.get("solution"), response_message.get("answer")
+    return response_message.get("answer")

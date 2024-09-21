@@ -393,14 +393,14 @@ async def compute_q2(input: InputModel):
                 else:
                     answer = answer + "Based on your explanation, I don't know how to determine the nature of the charges on the sphere."
 
-    working, answer = await output_answer(q, answer)
+    iras_answer = await output_answer(q, solution=answer)
 
     return {
         'status': 200,
         'body': {
             'isCorrect': correct,
-            'working': working,
-            'answer': answer,
+            'working': answer,
+            'answer': iras_answer,
             'concepts': concept_status
         }
     }

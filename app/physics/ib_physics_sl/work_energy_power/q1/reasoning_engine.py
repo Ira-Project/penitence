@@ -7,7 +7,7 @@ from ..read_explanation import *
 
 # Find the force
 def find_force(information_check_dict):
-    steps_response = ""
+    steps_response = "Let's try to find the force exerted. "
     force = None
     if information_check_dict[required_information[0]] == "Yes":
         steps_response = steps_response + \
@@ -20,19 +20,28 @@ def find_force(information_check_dict):
             "Even if acceleration is zero, the net force on box may not be zero. So, I don't how to determine the force exerted by the boy to pull the box.\n"
     elif information_check_dict[required_information[0]] == "No":
         steps_response = steps_response + \
-            "I don't how to determine the force exerted by the boy.\n"
+            "The question only gives us information on frictional force. I don't how to determine the force exerted by the boy.\n"
     return steps_response, force
 
 
 # Find the angle between force and displacement
 def find_theta(work_formula, information_check_dict):
     steps_response = ""
+    if theta in work_formula.free_symbols:
+        steps_response = "Let's try to find theta. "
     angle = values_dict["theta"]
     if information_check_dict[required_information[1]] == "Yes":
-        steps_response = steps_response + \
-            "I understand that we only consider the components of the force that are in the direction of displacement caused by the force.\n"
-        steps_response = steps_response + "This component is given by " + \
-            insert_latex("F cos(\\theta)") + "\n"
+        if theta in work_formula.free_symbols:
+            steps_response = steps_response + \
+                "I understand that we only consider the components of the force that are in the direction of displacement caused by the force.\n"
+            steps_response = steps_response + "This component is given by " + \
+                insert_latex("F cos(\\theta)") + "\n"
+        else:
+            steps_response = steps_response + \
+                "I understand that we only consider the components of the force that are in the direction of displacement caused by the force.\n"
+            steps_response = steps_response + "So we will replace " + \
+                insert_latex("F") + " with " + \
+                insert_latex("F cos(\\theta)") + "\n"
         correct_work_formula = F*s*cos(theta)
         angle = 0
         if simplify(correct_work_formula / work_formula) != 1:
@@ -47,18 +56,24 @@ def evaluate(information_check_dict, formula):
     working = ""
     answer = "Could not compute"
     correct = False
-    steps_working, force = find_force(information_check_dict)
-    working = working + steps_working
     steps_working, work_done = find_work_formula(formula)
     working = working + steps_working
-    try:
-        steps_working, angle, work_done = find_theta(
-            work_done, information_check_dict)
-        working = working + steps_working
-    except Exception as E:
-        print("hello", E)
-        print(working, answer, correct)
+    if work_done is None:
+        print("IB SL WEP Question 1: ", working, answer, correct)
         return working, answer, correct
+
+    if F not in work_done.free_symbols and s not in work_done.free_symbols:
+        working = working + \
+            "I am not sure how to determine the work done based on the information in the question."
+        print("IB SL WEP Question 1: ", working, answer, correct)
+        return working, answer, correct
+
+    steps_working, force = find_force(information_check_dict)
+    working = working + steps_working
+    steps_working, angle, work_done = find_theta(
+        work_done, information_check_dict)
+    working = working + steps_working
+
     try:
         if theta in work_done.free_symbols:
             working = working + insert_latex("W = " + latex(work_done.subs(
@@ -80,13 +95,13 @@ def evaluate(information_check_dict, formula):
             correct = True
         answer = '{:.2f}'.format(answer) + answer_unit
     except Exception as e:
-        working = working + "I am not sure how to determine the work done."
-        print(e)
+        # Intended exception occured
+        working = working + "The information in the question is not sufficient to solve the problem based on the formula you have given."
 
-    print(working, answer, correct)
     if working == "":
         working = "I am not sure how to solve this problem."
 
+    print("IB SL WEP Question 1: ", working, answer, correct)
     return working, answer, correct
 
 

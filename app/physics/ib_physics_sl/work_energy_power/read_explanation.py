@@ -50,16 +50,16 @@ def find_gpe_formula(formula):
     formula_json = formula_reader(
         "What is the formula for gravitational potential energy?", formula)
     if formula_json['formula'] == "Unknown":
-        steps_response = steps_response + "I am not sure how to proceed further.\n"
+        steps_response = steps_response + \
+            "I am not sure how to calculate gravitational potential energy based on the formula provided.\n"
     else:
         try:
             formula_read = formula_json['formula'].split("=")[1]
         except IndexError:
             formula_read = formula_json['formula']
         gpe = sympify(formula_read)
-        steps_response = steps_response + \
-            insert_latex("Gravitational Potential Energy = " +
-                         latex(gpe)) + "\n"
+        steps_response = steps_response + "Gravitational Potential Energy = " +\
+            insert_latex(latex(gpe)) + "\n"
     return steps_response, gpe
 
 
@@ -70,13 +70,14 @@ def find_ke_formula(formula):
     formula_json = formula_reader(
         "What is the formula for kinetic energy?", formula)
     if formula_json['formula'] == "Unknown":
-        steps_response = steps_response + "I am not sure how to proceed further.\n"
+        steps_response = steps_response + \
+            "I am not sure how to calculate kinetic energy based on the formula provided.\n"
     else:
         try:
             formula_read = formula_json['formula'].split("=")[1]
         except IndexError:
             formula_read = formula_json['formula']
         ke = sympify(formula_read)
-        steps_response = steps_response + \
-            insert_latex("Kinetic Energy = " + latex(ke)) + "\n"
+        steps_response = steps_response + "Kinetic Energy = " +\
+            insert_latex(latex(ke)) + "\n"
     return steps_response, ke

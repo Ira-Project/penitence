@@ -217,14 +217,14 @@ async def compute_q4(input: InputModel):
     answer = answer1 + "\n" + answer2
     correct = correct1 and correct2
 
-    working, answer = await output_answer(q, answer)
+    iras_answer = await output_answer(q, answer)
 
     return {
         'status': 200,
         'body': {
             'isCorrect': correct,
-            'working': working,
-            'answer': answer,
+            'working': answer,
+            'answer': iras_answer,
             'image': imageOutput,
             'concepts': concept_status
         }
