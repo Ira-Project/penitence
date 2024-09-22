@@ -216,15 +216,15 @@ async def compute_q4(input: InputModel):
                 answer2 = answer2 + " I understand that transfer of charges without contact is called induction but I don't know how it works."
     answer = answer1 + "\n" + answer2
     correct = correct1 and correct2
-    if not answer == "":
-        iras_answer = await output_answer(q, answer)
+
+    print("AP Physics C EM Question 4: ", answer, correct)
 
     return {
         'status': 200,
         'body': {
             'isCorrect': correct,
             'working': answer,
-            'answer': iras_answer,
+            'answer': "See image below",
             'image': imageOutput,
             'concepts': concept_status
         }
