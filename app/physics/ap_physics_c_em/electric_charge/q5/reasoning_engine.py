@@ -138,8 +138,8 @@ async def compute_q5(input: InputModel):
         'status': 200,
         'body': {
             'isCorrect': correct,
-            'working': iras_answer,
-            'answer': answer,
+            'working': answer,
+            'answer': iras_answer,
             'concepts': concept_status
         }
     }
