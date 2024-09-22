@@ -52,7 +52,7 @@ def evaluate(information_check_dict, formulas):
     answer = "Could not compute"
     correct = False
     steps_working, energy_conserved, energy_conserved_isolated, ke, gpe = check_total_mechanical_energy_conserved(
-        information_check_dict)
+        information_check_dict, formulas)
     working = working + steps_working
     if not ke or not gpe:
         print("IB SL WEP Question 5: ", working, answer, correct)
