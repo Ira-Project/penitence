@@ -216,8 +216,8 @@ async def compute_q4(input: InputModel):
                 answer2 = answer2 + " I understand that transfer of charges without contact is called induction but I don't know how it works."
     answer = answer1 + "\n" + answer2
     correct = correct1 and correct2
-
-    iras_answer = await output_answer(q, answer)
+    if not answer == "":
+        iras_answer = await output_answer(q, answer)
 
     return {
         'status': 200,
