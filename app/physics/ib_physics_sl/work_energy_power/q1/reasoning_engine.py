@@ -7,7 +7,7 @@ from ..read_explanation import *
 
 # Find the force
 def find_force(information_check_dict):
-    steps_response = "Let's try to find the force exerted. "
+    steps_response = "Let's first try to find the force. "
     force = None
     if information_check_dict[required_information[0]] == "Yes":
         steps_response = steps_response + \
@@ -70,6 +70,9 @@ def evaluate(information_check_dict, formula):
 
     steps_working, force = find_force(information_check_dict)
     working = working + steps_working
+    if not force:
+        print("IB SL WEP Question 1: ", working, answer, correct)
+        return working, answer, correct
     steps_working, angle, work_done = find_theta(
         work_done, information_check_dict)
     working = working + steps_working
@@ -112,7 +115,7 @@ async def compute_q1(input: InputModel):
     formulas = "[" + ','.join(formulas) + "]"
 
     information_check_dict = read_explanation(
-        required_information, explanation)
+        required_information, explanation, check_only_required=True)
     working, answer, correct = evaluate(information_check_dict, formulas)
 
     return {
@@ -120,7 +123,7 @@ async def compute_q1(input: InputModel):
         'body': {
             'isCorrect': correct,
             'working': working,
-            'answer': answer,
+            'answer': str(answer),
             'concepts': []
         }
     }

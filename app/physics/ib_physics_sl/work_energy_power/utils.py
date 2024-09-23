@@ -11,15 +11,16 @@ def insert_latex(str):
 
 
 def check_information(information_checklist, explanation, instructions_post=""):
+    messages = [
+        {"role": "system", "content": information_checklist_instructions +
+         information_checklist + instructions_post},
+        {"role": "user", "content": information_checklist_prompt_pre + explanation},
+    ]
     response = client.chat.completions.create(
         model=information_checklist_model,
-        messages=[
-            {"role": "system", "content": information_checklist_instructions +
-                information_checklist + instructions_post},
-            {"role": "user", "content": information_checklist_prompt_pre + explanation},
-        ],
+        messages=messages,
         response_format={"type": "json_object"},
-        temperature=0.5
+        temperature=0.3
     )
     response_message = json.loads(response.choices[0].message.content)
     return response_message
@@ -29,12 +30,15 @@ def formula_reader(formula_question, formula_array):
     response = client.chat.completions.create(
         model=formula_reader_model,
         messages=[
-            {"role": "system", "content": formula_reader_instructions + formula_question},
-            {"role": "user", "content": formula_reader_prompt_pre + formula_array},
+            {"role": "system", "content": formula_reader_instructions},
+            {"role": "user", "content": formula_reader_prompt_pre +
+             formula_question + "\n" + formula_reader_prompt_post + formula_array},
         ],
-        response_format={"type": "json_object"}
+        response_format={"type": "json_object"},
+        temperature=0.3
     )
     response_message = json.loads(response.choices[0].message.content)
+    print("Formula Reader Response: ", response_message)
     return response_message
 
 

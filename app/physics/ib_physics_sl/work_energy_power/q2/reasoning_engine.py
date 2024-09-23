@@ -9,6 +9,7 @@ from ..read_explanation import *
 def find_work_done_gpe(information_check_dict, formula):
     steps_response = ""
     work_done = None
+    gpe_formula = None
     if information_check_dict[required_information[0]] == "Yes":
         steps_response = steps_response + \
             "I understand that the work done in lifting the dumbbell against gravity is the same as the change in gravitational potential energy of the dumbbell.\n"
@@ -19,10 +20,16 @@ def find_work_done_gpe(information_check_dict, formula):
         if gpe_formula is None:
             return steps_response, work_done, gpe_formula
 
-        if h in gpe_formula.free_symbols:
-            work_done = gpe_formula.subs(h, h_final - h_initial)
-        else:
-            work_done = gpe_formula
+        work_done = gpe_formula
+        if h in work_done.free_symbols or h_1 in work_done.free_symbols or h_2 in work_done.free_symbols:
+            if h in work_done.free_symbols:
+                work_done = work_done.subs(h, h_final - h_initial)
+            if h_1 in work_done.free_symbols:
+                work_done = work_done.subs(h_1, h_initial)
+            if h_2 in work_done.free_symbols:
+                work_done = work_done.subs(h_2, h_final)
+
+        print("WORK DONE: ", work_done)
         steps_response = steps_response + \
             insert_latex("W = " + latex(work_done)) + "\n"
     else:
@@ -38,7 +45,7 @@ def evaluate(information_check_dict, formula):
     correct = False
     try:
         steps_working, work_done, gpe = find_work_done_gpe(
-            gpe, information_check_dict, formula)
+            information_check_dict, formula)
         working = working + steps_working
         if gpe is None:
             print("IB SL WEP Question 2: ", working, answer, correct)
@@ -79,14 +86,17 @@ async def compute_q2(input: InputModel):
 
     information_check_dict = read_explanation(
         required_information, explanation)
+
     working, answer, correct = evaluate(information_check_dict, formulas)
 
-    return {
+    response = {
         'status': 200,
         'body': {
             'isCorrect': correct,
             'working': working,
-            'answer': answer,
+            'answer': str(answer),
             'concepts': []
         }
     }
+
+    return response

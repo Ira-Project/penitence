@@ -22,10 +22,15 @@ def find_work_done_ke(information_check_dict, formula):
         if ke_formula is None:
             return steps_response, work_done, ke_formula
 
-        if v in ke_formula.free_symbols:
-            work_done = ke_formula.subs(v**2, v_final**2 - v_initial**2)
-        else:
-            work_done = ke_formula
+        work_done = ke_formula
+        if v in work_done.free_symbols or v_1 in work_done.free_symbols or v_2 in work_done.free_symbols:
+            if v in work_done.free_symbols:
+                work_done = work_done.subs(v, v_final - v_initial)
+            if v_1 in work_done.free_symbols:
+                work_done = work_done.subs(v_1, v_initial)
+            if v_2 in work_done.free_symbols:
+                work_done = work_done.subs(v_2, v_final)
+
         steps_response = steps_response + \
             insert_latex("W = " + latex(work_done)) + "\n"
     else:
@@ -87,12 +92,16 @@ def evaluate(information_check_dict, formulas):
             information_check_dict, formulas)
         working = working + steps_working
 
+        print("Find Work Done KE: ", steps_working,
+              work_done, compute_using_alternate_formula)
+
         if ke is None and not compute_using_alternate_formula:
             print("IB SL WEP Question 4: ", working, answer, correct)
             return working, answer, correct
 
         if ke is not None:
             try:
+                print("KE: ", work_done)
                 answer = simplify(work_done.subs(
                     [(m, "m"), (v_final, values_dict["v2"]), (v_initial, values_dict["v1"])]))
                 working = working + \
@@ -106,7 +115,7 @@ def evaluate(information_check_dict, formulas):
                 # Intended exception to handle case where some variables are not present in the formula
                 working = working + "The information in the question is not sufficient to solve the problem based on the formula you have given.\n"
 
-    except Exception as E:
+    except Exception as e:
         # Intended exception to handle case where some variables are not present in the formula
         working = working + "I understand that the work done in dragging the box is the change in kinetic energy of the box. The information in the question is not sufficient to solve the problem based on the formula you have given.\n"
         print("IB SL WEP Question 4: ", working, answer, correct)
@@ -114,11 +123,13 @@ def evaluate(information_check_dict, formulas):
 
     if information_check_dict[required_information[4]] == "Yes":
         # work done by external forces on a system or an object transfers energy to or from the system or the object thus, changing it's total mechanical energy
-        working = "I understand that the total work done on the block is a result of all the forces acting on the block. Here we are calculating only the work done by the dragging force."
+        answer = "Could not compute"
+        working = "I understand that the total work done on the block is a result of all the forces acting on the block. Here we are calculating only the work done by the dragging force but I'm not sure how to calculate it based on the formulas given.\n"
         compute_using_alternate_formula = True
 
     if compute_using_alternate_formula:
         steps_working, work_done = find_work_formula(formulas)
+        print("Work Done: ", work_done)
         try:
             working = working + \
                 insert_latex(
@@ -142,7 +153,7 @@ def evaluate(information_check_dict, formulas):
             answer = '{:.2f}'.format(answer) + answer_unit
 
             if ke:
-                working = working + "The kinetic energy of the box doesn't change as the net work done by all the external forces on the box is zero. This is because the work done by the dragging force is equal and opposite to the work done by friction.\n"
+                working = working + "\nThe kinetic energy of the box doesn't change as the net work done by all the external forces on the box is zero. This is because the work done by the dragging force is equal and opposite to the work done by friction.\n"
 
         except Exception as e:
             # Intended exception to handle case where some variables are not present in the formula
@@ -164,7 +175,7 @@ async def compute_q4(input: InputModel):
     formulas = "[" + ','.join(formulas) + "]"
 
     information_check_dict = read_explanation(
-        required_information, explanation)
+        required_information, explanation, check_only_required=True)
     working, answer, correct = evaluate(information_check_dict, formulas)
 
     return {
@@ -172,7 +183,7 @@ async def compute_q4(input: InputModel):
         'body': {
             'isCorrect': correct,
             'working': working,
-            'answer': answer,
+            'answer': str(answer),
             'concepts': []
         }
     }

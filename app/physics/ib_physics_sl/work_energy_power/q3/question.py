@@ -14,7 +14,10 @@ def combine_value_and_unit(var):
 # Question Parameters
 question_id = 3
 required_information = [
-    unknown_concepts["What is the work done to change the velocity?"][0]
+    unknown_concepts["What is the work done to change the velocity?"][0],
+    unknown_concepts["What is the work done against gravity?"][0],
+    unknown_concepts["What is the conservation of total mechanical energy?"][3],
+
 ]
 
 mass = insert_latex("200 g")
@@ -44,7 +47,7 @@ values_dict["v_initial"] = 20
 units_dict["v_initial"] = "m/s"
 values_dict["v_final"] = 0
 units_dict["v_final"] = "m/s"
-answer_value = 40
+answer_value = -40
 answer_unit = " J"
 answer_output = insert_latex('{:.2f}'.format(answer_value) + answer_unit)
 

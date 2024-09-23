@@ -9,6 +9,7 @@ from ..read_explanation import *
 def find_work_done_ke(information_check_dict, formula):
     steps_response = ""
     work_done = None
+    ke_formula = None
     if information_check_dict[required_information[0]] == "Yes":
         steps_response = steps_response + \
             "I understand that the work done in changing the velocity of the football is equal to the change in kinetic energy of the football.\n"
@@ -21,10 +22,15 @@ def find_work_done_ke(information_check_dict, formula):
         if ke_formula is None:
             return steps_response, work_done, ke_formula
 
-        if v in ke_formula.free_symbols:
-            work_done = ke_formula.subs(v**2, v_final**2 - v_initial**2)
-        else:
-            work_done = ke_formula
+        work_done = ke_formula
+        if v in work_done.free_symbols or v_1 in work_done.free_symbols or v_2 in work_done.free_symbols:
+            if v in work_done.free_symbols:
+                work_done = work_done.subs(v**2, v_final**2 - v_initial**2)
+            if v_1 in work_done.free_symbols:
+                work_done = work_done.subs(v_1, v_initial)
+            if v_2 in work_done.free_symbols:
+                work_done = work_done.subs(v_2, v_final)
+
         steps_response = steps_response + \
             insert_latex("W = " + latex(work_done)) + "\n"
     else:
@@ -90,7 +96,7 @@ async def compute_q3(input: InputModel):
         'body': {
             'isCorrect': correct,
             'working': working,
-            'answer': answer,
+            'answer': str(answer),
             'concepts': []
         }
     }
