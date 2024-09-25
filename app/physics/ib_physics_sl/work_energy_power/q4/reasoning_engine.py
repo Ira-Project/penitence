@@ -10,6 +10,7 @@ def find_work_done_ke(information_check_dict, formula):
     steps_response = ""
     work_done = None
     compute_using_alternate_formula = False
+    ke_formula = None
     if information_check_dict[required_information[0]] == "Yes":
         steps_response = steps_response + \
             "I understand that the work done in dragging the box is equal to the change in kinetic energy of the box.\n"
@@ -116,6 +117,7 @@ def evaluate(information_check_dict, formulas):
                 working = working + "The information in the question is not sufficient to solve the problem based on the formula you have given.\n"
 
     except Exception as e:
+        print("ERROR: ", e)
         # Intended exception to handle case where some variables are not present in the formula
         working = working + "I understand that the work done in dragging the box is the change in kinetic energy of the box. The information in the question is not sufficient to solve the problem based on the formula you have given.\n"
         print("IB SL WEP Question 4: ", working, answer, correct)
