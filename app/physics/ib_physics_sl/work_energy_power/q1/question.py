@@ -48,6 +48,7 @@ units_dict["F"] = "N"
 values_dict["s"] = 100
 units_dict["s"] = "m"
 values_dict["theta"] = 30
+units_dict["theta"] = "degrees"
 values_dict["a"] = 0
 answer_value = 30
 answer_unit = " kJ"

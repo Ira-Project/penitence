@@ -28,8 +28,9 @@ def find_force(information_check_dict):
 def find_theta(work_formula, information_check_dict):
     steps_response = ""
     if theta in work_formula.free_symbols:
-        steps_response = "Let's try to find theta. "
+        steps_response = "Let's try to find theta.\n"
     angle = values_dict["theta"]
+    angle_unit = units_dict["theta"]
     if information_check_dict[required_information[1]] == "Yes":
         if theta in work_formula.free_symbols:
             steps_response = steps_response + \
@@ -48,6 +49,9 @@ def find_theta(work_formula, information_check_dict):
             work_formula = work_formula.subs(F, F*cos(theta))
             steps_response = steps_response + \
                 insert_latex("W = " + latex(work_formula)) + "\n"
+    else:
+        if theta in work_formula.free_symbols:
+            steps_response = steps_response + "As given in the question, theta is " +  str(angle) + " " + angle_unit + ".\n"
     return steps_response, angle, work_formula
 
 

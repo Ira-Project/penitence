@@ -47,7 +47,7 @@ def find_work_formula(formula):
                 "What is the formula for work done?", formula)
             if formula_json['formula'] == "Unknown":
                 steps_response = steps_response + \
-                    "I am not sure how to proceed further since you have not given me the formula for work done.\n"
+                    "I am not sure how to proceed further since you have not given me the formula for work done.\n" + "Please enter the formula in the formula box given below the explanation box.\n"
             else:
                 try:
                     formula_read = formula_json['formula'].split("=")[1]
