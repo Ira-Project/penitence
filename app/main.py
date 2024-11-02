@@ -26,8 +26,6 @@ app.include_router(physics_router)
 async def root():
     return {"Hello": "World"}
 
-
-# Use Enum from docs to handle the different questions
-# Set up Pydantic model validation for verification JSON
-# Read up on the file structure
-# Background tasks is also super useful
+if __name__ == '__main__':
+    import uvicorn
+    uvicorn.run(app)
