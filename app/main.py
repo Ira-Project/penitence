@@ -28,4 +28,4 @@ async def root():
 
 if __name__ == '__main__':
     import uvicorn
-    uvicorn.run(app)
+    uvicorn.run(app, workers=16)
