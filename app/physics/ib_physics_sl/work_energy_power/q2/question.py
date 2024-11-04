@@ -13,8 +13,9 @@ def combine_value_and_unit(var):
 
 # Question Parameters
 question_id = 2
-required_information = [
-    unknown_concepts["What is the work done against gravity?"][0]
+question_concepts = [
+    concept_questions[2],
+    concept_questions[3]
 ]
 
 mass = insert_latex("10 kg")
@@ -55,5 +56,5 @@ question_json = {
     "Question_image": question_image,
     "Answer": answer_output,
     "Answer_type": answer_type,
-    "required_concepts": required_information,
+    "required_concepts": question_concepts,
 }

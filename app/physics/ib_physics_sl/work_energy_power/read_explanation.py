@@ -4,34 +4,42 @@ from .utils import *
 from latex2sympy2 import latex2sympy
 
 
-# Convert concepts to an information checklist
-def read_explanation(required_information, explanation, check_only_required=False):
-    information_check_dict = {}
-    information_list = ""
+# Check the explanation for the required information
+def read_explanation(required_information, explanation, check_only_required=True):
+    explanation_check_dict = {}
+    procedural_check = False
+    question_list = ""
 
     if check_only_required:
-        for information in required_information:
-            information_list = information_list + "Question: " + \
-                information_questions[information] + \
-                "\nInformation: " + information + "\n"
-            information_check_dict[information] = "Unknown"
+        for question in required_information:
+            question_list = question_list + "concept_question: " + question + "\n" + \
+                "valid_answer: " + unknown_concepts_answers[question] + "\n" + \
+                "rephrased_answer: " + "\n".join(unknown_concepts_rephrases[question]) + "\n" + \
+                "partial_answer: " + "\n".join(unknown_concepts_partial_answers[question].keys()) + "\n\n"
+            print(question_list)
+            explanation_check_dict[question] = "Unknown"
     else:
-        for concept in unknown_concepts:
-            for information in unknown_concepts[concept]:
-                information_list = information_list + "Question: " + \
-                    information_questions[information] + \
-                    "\nInformation: " + information + "\n"
-                information_check_dict[information] = "Unknown"
+        for question in concept_questions:
+            question_list = question_list + "concept_question: " + question + "\n" + \
+                "valid_answer: " + unknown_concepts_answers[question] + "\n" + \
+                "rephrased_answer: " + "\n".join(unknown_concepts_rephrases[question]) + "\n" + \
+                "partial_answer: " + "\n".join(unknown_concepts_partial_answers[question].keys()) + "\n\n"
+            explanation_check_dict[question] = "Unknown"
 
-    # Perform an automated information check
+    # Perform an automated checklist check  
     checklist_json = check_information(
-        information_list, explanation, instructions_post=information_checklist_prompt_post)
+        question_list, explanation, instructions_post=information_checklist_prompt_post)
     for information in checklist_json['information_checklist']:
-        if information['information'] in information_check_dict:
-            information_check_dict[information['information']
-                                   ] = information['check']
-    print(information_check_dict)
-    return information_check_dict
+        if information['concept_question'] in explanation_check_dict:
+            explanation_check_dict[information['concept_question']] = information['check']
+            if information['check'] != "Correct":
+                if information['partial_answer'] in unknown_concepts_partial_answers[information['concept_question']]:
+                    explanation_check_dict[information['concept_question']] = information['partial_answer']
+            if information['is_procedural']:
+                print("Procedural Check: ", information['concept_question'])
+                procedural_check = True
+    print(explanation_check_dict)
+    return explanation_check_dict, procedural_check
 
 
 # Find the formula for work done
@@ -47,7 +55,7 @@ def find_work_formula(formula):
                 "What is the formula for work done?", formula)
             if formula_json['formula'] == "Unknown":
                 steps_response = steps_response + \
-                    "I am not sure how to proceed further since you have not given me the formula for work done.\n" + "Please enter the formula in the formula box given below the explanation box.\n"
+                    "I am not sure how to proceed further since you have not given me the formula for work done.\n\n" + "Note: Please enter the formula in the formula box given on the bottom left of the screen.\n"
             else:
                 try:
                     formula_read = formula_json['formula'].split("=")[1]
