@@ -15,10 +15,10 @@ def find_force(information_check_dict):
         force = values_dict["Friction"]
         steps_response = steps_response + \
             insert_latex("F = " + combine_value_and_unit("F")) + "\n"
-    elif information_check_dict[question_concepts[0]] == "Not Present":
-        steps_response = steps_response + choice(concept_not_mentioned_responses[question_concepts[0]]) + "\n"
     elif information_check_dict[question_concepts[0]] in unknown_concepts_partial_answers[question_concepts[0]]:
         steps_response = steps_response + choice(partial_concept_responses[information_check_dict[question_concepts[0]]]) + "\n"
+    else:
+        steps_response = steps_response + choice(concept_not_mentioned_responses[question_concepts[0]]) + "\n"
     return steps_response, force
 
 

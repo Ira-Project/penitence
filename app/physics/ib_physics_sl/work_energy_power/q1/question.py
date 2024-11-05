@@ -79,7 +79,7 @@ concept_not_mentioned_responses = {
         "The question only gives us information on frictional force. I don't how to determine the force exerted by the boy.",
         "With only the friction force provided, I'm unsure how to calculate the force the boy applies.",
         "I can see the friction value, but I'm missing information about how much force the boy needs to use. How do I find the force exerted by the boy?",
-        "Without knowing the boy's applied force, and only having friction information, I don't know how to proceed.",
+        "Without knowing the boy's applied force, and only having information about the friction force, I don't know how to proceed.",
         "The friction force is given, but I need help understanding how to find the force the boy exerts."
     ]
 }
