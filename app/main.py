@@ -25,7 +25,3 @@ app.include_router(physics_router)
 @app.post("/")
 async def root():
     return {"Hello": "World"}
-
-if __name__ == '__main__':
-    import uvicorn
-    uvicorn.run(app, workers=16)
