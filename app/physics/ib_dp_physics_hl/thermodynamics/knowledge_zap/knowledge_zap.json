@@ -1,84 +1,593 @@
 {
   "name": "Thermodynamics",
-  "topicId": "TODO: VIGNESH WILL FIL THIS IN",
+  "topicId": "",
   "latexDelimiter": "$!$",
   "multipleChoiceQuestions": [
-    [
-      {
-          "id": "1",
+    {
+      "id": "a1b2c3d4e5f6g7h8i9j0k",
+      "variants": [
+        {
+          "id": "k9j8h7g6f5e4d3c2b1a0",
+          "question": "What is the formula for the efficiency, $!$\\eta$!$, of a heat engine, given that $!$W$!$ is the work done by the engine, $!$Q_h$!$ is the heat input, and $!$Q_c$!$ is the heat output?",
+          "image": null,
+          "options": [
+            {
+              "text": "$!$\\eta = \\frac{W}{Q_h}$!$",
+              "image": null,
+              "isCorrect": true
+            },
+            {
+              "text": "$!$\\eta = \\frac{Q_h}{Q_c}$!$",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "$!$\\eta = \\frac{Q_h}{W}$!$",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "$!$\\eta = \\frac{W}{Q_c}$!$",
+              "image": null,
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "id": "m1n2p3q4r5s6t7u8v9w0",
+          "question": "What is the formula for the efficiency, $!$\\eta$!$, of a heat engine, given that $!$W$!$ is the work done by the engine, $!$Q_h$!$ is the heat input, and $!$Q_c$!$ is the heat output?",
+          "image": null,
+          "options": [
+            {
+              "text": "$!$\\eta = \\frac{Q_h - Q_c}{Q_h}$!$",
+              "image": null,
+              "isCorrect": true
+            },
+            {
+              "text": "$!$\\eta = \\frac{Q_h}{Q_h - Q_c}$!$",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "$!$\\eta = \\frac{Q_c - Q_h}{Q_c}$!$",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "$!$\\eta = \\frac{Q_c}{Q_c - Q_h}$!$",
+              "image": null,
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1c2d3e4f5g6h7i8j9k0l",
+      "variants": [
+        {
+          "id": "l0k9j8h7g6f5e4d3c2b1",
+          "question": "How to calculate the efficiency, $!$\\eta$!$, of a Carnot engine, given that $!$T_h$!$ is the temperature of the hot reservoir and $!$T_c$!$ is the temperature of the cold reservoir?",
+          "image": null,
+          "options": [
+            {
+              "text": "$!$\\eta = \\frac{T_h - T_c}{T_h}$!$",
+              "image": null,
+              "isCorrect": true
+            },
+            {
+              "text": "$!$\\eta = \\frac{T_h}{T_h - T_c}$!$",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "$!$\\eta = \\frac{T_c}{T_h - T_c}$!$",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "$!$\\eta = \\frac{T_h}{T_c}$!$",
+              "image": null,
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "id": "m1n2p3q4r5s6t7u8v9w0",
+          "question": "What is the formula for the efficiency, $!$\\eta$!$, of a Carnot engine, given that $!$T_h$!$ is the temperature of the hot reservoir and $!$T_c$!$ is the temperature of the cold reservoir?",
+          "image": null,
+          "options": [
+            {
+              "text": "$!$\\eta = 1 - \\frac{T_c}{T_h}$!$",
+              "image": null,
+              "isCorrect": true
+            },
+            {
+              "text": "$!$\\eta = 1 - \\frac{T_h}{T_c}$!$",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "$!$\\eta = 1 - \\frac{T_h - T_c}{T_h}$!$",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "$!$\\eta = 1 - \\frac{T_c}{T_h + T_c}$!$",
+              "image": null,
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1d2e3f4g5h6i7j8k9l0m",
+      "variants": [
+        {
+          "id": "m1n2p3q4r5s6t7u8v9w0",
+          "question": "What is the formula for the first law of thermodynamics? Assume that $!$Q$!$ is the heat added to the system, $!$U$!$ is the internal energy of the system, and $!$W$!$ is the work done by the system.",
+          "image": null,
+          "options": [
+            {
+              "text": "$!$Q = \\Delta U + W$!$",
+              "image": null,
+              "isCorrect": true
+            },
+            {
+              "text": "$!$Q = \\Delta U - W$!$",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "$!$W = \\Delta U + Q$!$",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "$!\\Delta U = Q + W$!$",
+              "image": null,
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "id": "n1o2p3q4r5s6t7u8v9w0",
+          "question": "What is the formula for the first law of thermodynamics? Assume that $!$Q$!$ is the heat added to the system, $!$U$!$ is the internal energy of the system, and $!$W$!$ is the work done by the system.",
+          "image": null,
+          "options": [
+            {
+              "text": "$!$\\Delta U = Q - W$!$",
+              "image": null,
+              "isCorrect": true
+            },
+            {
+              "text": "$!$\\Delta U = Q + W$!$",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "$!$W = Q + \\Delta U$!$",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "$!$Q = \\Delta U - W$!$",
+              "image": null,
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d1e2f3g4h5i6j7k8l9m0n",
+      "variants": [
+        {
+          "id": "n1o2p3q4r5s6t7u8v9w0",
+          "question": "Which of the following statements is correct about the first law of thermodynamics?",
+          "image": null,
+          "options": [
+            {
+              "text": "It is the law of conservation of energy applied to thermodynamics.",
+              "image": null,
+              "isCorrect": true
+            },
+            {
+              "text": "It involves the concept of entropy.",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "It is a statement about the efficiency of heat engines.",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "It states that the internal energy of a system is a state function.",
+              "image": null,
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "id": "o1p2q3r4s5t6u7v8w9x0",
+          "question": "Which of the following statements is correct about the first law of thermodynamics?",
+          "image": null,
+          "options": [
+            {
+              "text": "When heat is added to a system, it is used to increase the internal energy of the system and/or to do work.",
+              "image": null,
+              "isCorrect": true
+            },
+            {
+              "text": "The internal energy of an ideal gas is a function of its temperature only.",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "The efficiency of a heat engine is always less than 100%.",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "The entropy of a system is always increasing.",
+              "image": null,
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e1f2g3h4i5j6k7l8m9n0o",
+      "variants": [
+        {
+          "id": "o1p2q3r4s5t6u7v8w9x0",
+          "question": "Which of the following statements is correct about the second law of thermodynamics?",
+          "image": null,
+          "options": [
+            {
+              "text": "It is the law of conservation of energy applied to thermodynamics.",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "It is a statement about the efficiency of heat engines.",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "It explains why energy does not move spontaneously from a cooler to a hotter object.",
+              "image": null,
+              "isCorrect": true
+            },
+            {
+              "text": "It claims that when a gas expands adiabatically, its temperature increases.",
+              "image": null,
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "id": "p1q2r3s4t5u6v7w8x9y0",
+          "question": "Which of the following statements is correct about the second law of thermodynamics?",
+          "image": null,
+          "options": [
+            {
+              "text": "It states that the entropy of an isolated system never decreases.",
+              "image": null,
+              "isCorrect": true
+            },
+            {
+              "text": "It states that the total energy of an isolated system is always conserved.",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "It claims that the Carnot engine is the most efficient heat engine.",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "It states that the entropy of an isolated system always decreases.",
+              "image": null,
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f1g2h3i4j5k6l7m8n9o0p",
+      "variants": [
+        {
+          "id": "p1q2r3s4t5u6v7w8x9y0",
+          "question": "How can you calculate the internal energy, $!$U$!$, of an ideal gas?",
+          "image": null,
+          "options": [
+            {
+              "text": "$!$U = \\frac{3}{2} N k_B T$!$",
+              "image": null,
+              "isCorrect": true
+            },
+            {
+              "text": "$!$U = \\frac{5}{2} nRT$!$",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "$!$U = \\frac{3}{2} n k_B T$!$",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "$!$U = \\frac{5}{2} N k_B T$!$",
+              "image": null,
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "id": "q1r2s3t4u5v6w7x8y9z0",
+          "question": "How can you calculate the internal energy, $!$U$!$, of an ideal gas?",
+          "image": null,
+          "options": [
+            {
+              "text": "$!$U = \\frac{3}{2} n R T$!$",
+              "image": null,
+              "isCorrect": true
+            },
+            {
+              "text": "$!$U = \\frac{5}{2} n R T$!$",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "$!$U = \\frac{3}{2} n k_B T$!$",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "$!$U = \\frac{5}{2} N k_B T$!$",
+              "image": null,
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "id": "r1s2t3u4v5w6x7y8z9a0",
+          "question": "How can you calculate the internal energy, $!$U$!$, of an ideal gas?",
+          "image": null,
+          "options": [
+            {
+              "text": "$!$U = \\frac{3}{2} P V$!$",
+              "image": null,
+              "isCorrect": true
+            },
+            {
+              "text": "$!$U = \\frac{3P}{2V}$!$",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "$!$U = \\frac{3V}{2P}$!$",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "$!$U = \\frac{5}{2} P V$!$",
+              "image": null,
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g1h2i3j4k5l6m7n8o9p0q",
+      "variants": [
+        {
+          "id": "q1r2s3t4u5v6w7x8y9z0",
+          "question": "What is true about a closed system and an isolated system?",
+          "image": null,
+          "options": [
+            {
+              "text": "A closed system can exchange energy with the surroundings, while an isolated system cannot.",
+              "image": null,
+              "isCorrect": true
+            },
+            {
+              "text": "An isolated system can exchange energy with the surroundings, while a closed system cannot.",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "A closed system can exchange mass with the surroundings, while an isolated system cannot.",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "An isolated system can exchange mass with the surroundings, while a closed system cannot.",
+              "image": null,
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "id": "s1t2u3v4w5x6y7z8a9b0",
+          "question": "What is true about a closed system and an isolated system?",
+          "image": null,
+          "options": [
+            {
+              "text": "Both systems cannot exchange mass with the surroundings.",
+              "image": null,
+              "isCorrect": true
+            },
+            {
+              "text": "Both systems cannot exchange energy with the surroundings.",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "Both systems can exchange mass with the surroundings.",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "Both systems can exchange energy with the surroundings.",
+              "image": null,
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "h1i2j3k4l5m6n7o8p9q0r",
+      "variants": [
+        {
+          "id": "s1t2u3v4w5x6y7z8a9b0",
+          "question": "What is the work done when a gas expands under constant pressure?",
+          "image": null,
+          "options": [
+            {
+              "text": "$!$W = P \\Delta V$!$",
+              "image": null,
+              "isCorrect": true
+            },
+            {
+              "text": "$!$W = \\Delta P V$!$",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "$!$W = P V$!$",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "$!$W = \\frac{P}{V}$!$",
+              "image": null,
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "id": "t1u2v3w4x5y6z7a8b9c0",
+          "question": "How to calculate the work done by or on a gas?",
+          "image": null,
+          "options": [
+            {
+              "text": "The work done is the area under the curve in the $!$P-V$!$ diagram.",
+              "image": null,
+              "isCorrect": true
+            },
+            {
+              "text": "The work done is equal to the change in internal energy of the gas.",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "The work done is equal to the heat supplied or removed from the gas.",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "The work done is equal to the change in total mechanical energy of the gas.",
+              "image": null,
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "matchingQuestions": [
+    {
+      "id": "x1y2z3a4b5c6d7e8f9g0h",
+      "variants": [
+        {
+          "id": "h9g8f7e6d5c4b3a2z1y0",
+          "question": "Match these thermodynamic processes with their corresponding descriptions.",
+          "image": null,
+          "options": [
+            {
+              "optionA": "Isothermal process",
+              "optionB": "Temperature remains constant"
+            },
+            {
+              "optionA": "Adiabatic process",
+              "optionB": "No heat transfer occurs"
+            },
+            {
+              "optionA": "Isobaric process",
+              "optionB": "Pressure remains constant"
+            },
+            {
+              "optionA": "Isovolumetric process",
+              "optionB": "Volume remains constant"
+            }
+          ]
+        },
+        {
+          "id": "j1k2l3m4n5p6q7r8s9t0u",
+          "question": "Match these thermodynamic processes with their corresponding formulas.",
+          "image": null,
+          "options": [
+            {
+              "optionA": "Isothermal process",
+              "optionB": "$!$P V = \\text{constant}$!$"
+            },
+            {
+              "optionA": "Adiabatic process",
+              "optionB": "$!$P V^{\\frac{5}{3}} = \\text{constant}$!$"
+            },
+            {
+              "optionA": "Isobaric process",
+              "optionB": "$!$\\frac{V}{T} = \\text{constant}$!$"
+            },
+            {
+              "optionA": "Isovolumetric process",
+              "optionB": "$!$\\frac{P}{T} = \\text{constant}$!$"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "orderingQuestions": [
+    {
+      "id": "v1w2x3y4z5a6b7c8d9e0f",
+      "variants": [
+        {
+          "id": "f9e8d7c6b5a4z3y2x1w0",
           "question": "",
           "image": null,
           "options": [
             {
               "text": "",
               "image": null,
-              "isCorrect": false
+              "order": 1
             },
             {
               "text": "",
               "image": null,
-              "isCorrect": true
+              "order": 2
             },
             {
               "text": "",
               "image": null,
-              "isCorrect": false
+              "order": 3
             },
             {
               "text": "",
               "image": null,
-              "isCorrect": false
+              "order": 4
             }
           ]
-      }
-    ]
-  ],
-  "matchingQuestions": [
-    [
-      {
-        "id": "2",
-        "question": "",
-        "image": null,
-        "options": [
-          {
-            "Point A": "",
-            "Point B": "",
-            "Point C": "",
-            "Point D": ""
-          }
-        ]
-      }
-    ]
-  ],
-  "orderingQuestions": [
-    [
-      {
-        "id": "3",
-        "question": "",
-        "image": null,
-        "options": [
-          {
-            "text": "",
-            "image": null,
-            "order": 1
-          },
-          {
-            "text": "",
-            "image": null,
-            "order": 2
-          },
-          {
-            "text": "",
-            "image": null,
-            "order": 3
-          },
-          {
-            "text": "",
-            "image": null,
-            "order": 4
-          }
-        ]
-      }
-    ]
+        }
+      ]
+    }
   ]
 }
