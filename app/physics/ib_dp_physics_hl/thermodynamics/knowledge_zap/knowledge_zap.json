@@ -1,0 +1,84 @@
+{
+  "name": "Thermodynamics",
+  "topicId": "TODO: VIGNESH WILL FIL THIS IN",
+  "latexDelimiter": "$!$",
+  "multipleChoiceQuestions": [
+    [
+      {
+          "id": "1",
+          "question": "",
+          "image": null,
+          "options": [
+            {
+              "text": "",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "",
+              "image": null,
+              "isCorrect": true
+            },
+            {
+              "text": "",
+              "image": null,
+              "isCorrect": false
+            },
+            {
+              "text": "",
+              "image": null,
+              "isCorrect": false
+            }
+          ]
+      }
+    ]
+  ],
+  "matchingQuestions": [
+    [
+      {
+        "id": "2",
+        "question": "",
+        "image": null,
+        "options": [
+          {
+            "Point A": "",
+            "Point B": "",
+            "Point C": "",
+            "Point D": ""
+          }
+        ]
+      }
+    ]
+  ],
+  "orderingQuestions": [
+    [
+      {
+        "id": "3",
+        "question": "",
+        "image": null,
+        "options": [
+          {
+            "text": "",
+            "image": null,
+            "order": 1
+          },
+          {
+            "text": "",
+            "image": null,
+            "order": 2
+          },
+          {
+            "text": "",
+            "image": null,
+            "order": 3
+          },
+          {
+            "text": "",
+            "image": null,
+            "order": 4
+          }
+        ]
+      }
+    ]
+  ]
+}
