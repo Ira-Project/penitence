@@ -1,0 +1,82 @@
+{
+    "name": "",
+    "topicId": "",
+    "reasoningQuestions": [
+        {
+          "questionText": "",
+          "questionImage": "",
+          "answerText": "",
+          "correctAnswers": [
+            
+          ],
+          "answerImage": "",
+          "numberOfSteps": null,
+          "topicId": "",
+          "answerOptions": [
+            {
+              "id": "",
+              "optionText": "",
+              "optionImage": ""
+            },
+            {
+              "id": "",
+              "optionText": "",
+              "optionImage": ""
+            },
+            {
+              "id": "",
+              "optionText": "",
+              "optionImage": ""
+            },
+            {
+              "id": "",
+              "optionText": "",
+              "optionImage": ""
+            },
+            {
+              "id": "",
+              "optionText": "",
+              "optionImage": ""
+            },
+            {
+              "id": "",
+              "optionText": "",
+              "optionImage": ""
+            },
+            {
+              "id": "",
+              "optionText": "",
+              "optionImage": ""
+            },
+            {
+              "id": "",
+              "optionText": "",
+              "optionImage": ""
+            }
+          ],
+          "pathways": [
+            {
+              "steps": [
+                {
+                  "stepNumber": 1,
+                  "isCorrect": true,
+                  "answerOptionId": ""
+                },
+                {
+                  "stepNumber": 2,
+                  "isCorrect": true,
+                  "answerOptionId": ""
+                },
+                {
+                  "stepNumber": 3,
+                  "isCorrect": false,
+                  "answerOptionId": "",
+                  "replacementOptionId": ""
+                }
+              ]
+            }
+  
+          ]
+        }
+    ]
+  }

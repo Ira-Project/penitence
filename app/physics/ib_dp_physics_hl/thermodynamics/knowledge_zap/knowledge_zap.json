@@ -145,7 +145,7 @@
               "isCorrect": false
             },
             {
-              "text": "$!\\Delta U = Q + W$!$",
+              "text": "$!$\\Delta U = Q + W$!$",
               "image": null,
               "isCorrect": false
             }
@@ -557,37 +557,5 @@
     }
   ],
   "orderingQuestions": [
-    {
-      "id": "v1w2x3y4z5a6b7c8d9e0f",
-      "variants": [
-        {
-          "id": "f9e8d7c6b5a4z3y2x1w0",
-          "question": "",
-          "image": null,
-          "options": [
-            {
-              "text": "",
-              "image": null,
-              "order": 1
-            },
-            {
-              "text": "",
-              "image": null,
-              "order": 2
-            },
-            {
-              "text": "",
-              "image": null,
-              "order": 3
-            },
-            {
-              "text": "",
-              "image": null,
-              "order": 4
-            }
-          ]
-        }
-      ]
-    }
   ]
 }
