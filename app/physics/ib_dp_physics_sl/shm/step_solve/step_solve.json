@@ -1,18 +1,17 @@
 {
-  "name": "Thermodynamics",
-  "topicIdDev": "1",
+  "name": "Simpe Harmonic Motion",
+  "topicIdDev": "",
   "topicIdProd": "",
   "latexDelimiter": "$!$",
   "questions": [
     {
-      "id": "a56d8fe7a1034c1092e07", 
-      "questionText": "A Carnot heat engine operates using an ideal monatomic gas. In one complete cycle, the engine absorbs $!$3.42 MJ$!$ of heat from the hot reservoir at $!$650 \\degree C$!$ and releases $!$2.15 MJ$!$ of heat to the cold reservoir.",
+      "id": "6d8fe7a1034c1092e075a", 
+      "questionText": "A simple pendulum with length $!$l$!$ is set up for an experiment. Over a period of four minutes, the pendulum makes $!$75$!$ complete oscillations.",
       "questionImage": "",
       "steps": [
         {
-          "id": "57fd0cf4c4b64d1eb9dec",
-          "stepText": "What is the formula for the efficiency of an engine?",
-          "stepText2": "Calculate the efficiency of the engine up to 2 decimal places.",
+          "id": "fd0cf4c4b64d1eb9dec57",
+          "stepText": "Calculate the efficiency of the engine up to 2 decimal places.",
           "stepImage": "",
           "stepSolveAnswer": ["0.37", "0.37 MJ", "0.37MJ"],
           "options": [
@@ -29,9 +28,8 @@
           ]
         },
         {
-          "id": "41431e6b0b6f455d81d9c",
-          "stepText": "What formula can be used to find the temperature of the cold reservoir?",
-          "stepText2": "Calculate the temperature of the cold reservoir up to 2 decimal places (in $!$\\degree C$!$).",
+          "id": "431e6b0b6f455d81d9c41",
+          "stepText": "Calculate the temperature of the cold reservoir up to 2 decimal places (in $!$\\degree C$!$).",
           "stepImage": "",
           "stepSolveAnswer": ["308.49", "308.49 C", "308.49C"],
           "options": [
@@ -55,21 +53,22 @@
       ]
     },
     {
-      "id": "6af28ec7b0144efaa2344",
+      "id": "f28ec7b0144efaa23446a",
       "questionText": "The diagram illustrates the cycle EFGHE of a fixed mass of monatomic ideal gas",
       "questionImage": "q2_img_1.png",
       "steps": [
         {
-          "id": "f25005a97ed84299bf163",
+          "id": "5a97ed84299bf163f2501",
           "stepText": "Is the work done by the gas positive or negative in the process H to E?",
           "stepImage": "",
+          "stepSolveAnswer": ["negative", "negative ", "Negative", "NEGATIVE"],
           "options": [
             {
               "optionText": "If the gas expands, the work done by the gas is positive",
               "optionImage": "",
               "isCorrect": true
             },
-            {
+            { 
               "optionText": "If the gas expands, the work done by the gas is negative",
               "optionImage": "",
               "isCorrect": false
@@ -77,9 +76,8 @@
           ]
         },
         {
-          "id": "90fb33a6880c48639023b",
-          "stepText": "Which is true for adiabatic processes?",
-          "stepText2": "Is H to E an adiabatic process? Answer 'yes' or 'no'.",
+          "id": "3a6880c48639023b90f90",
+          "stepText": "Is H to E an adiabatic process? Answer 'yes' or 'no'.",
           "stepImage": "",
           "stepSolveAnswer": ["no", "no ", "No", "NO"],
           "options": [
@@ -101,9 +99,8 @@
           ]
         },
         {
-          "id": "4e4e320601fe47d0bf960",
-          "stepText": "In this question, how would you calculate the net work done by the gas?",
-          "stepText2": "Calculate an approximate value for the net work done by the gas in the cycle (in $!$kJ$!$).",
+          "id": "4e320601fe47d0bf9604e",
+          "stepText": "Calculate an approximate value for the net work done by the gas in the cycle (in $!$kJ$!$).",
           "stepImage": "",
           "stepSolveAnswer": ["50", "50 kJ", "50KJ", "50kj", "50 KJ"],
           "options": [
