@@ -1,119 +1,136 @@
 {
-  "name": "Simpe Harmonic Motion",
+  "name": "Simple Harmonic Motion",
   "topicIdDev": "",
   "topicIdProd": "",
   "latexDelimiter": "$!$",
   "questions": [
     {
-      "id": "6d8fe7a1034c1092e075a", 
-      "questionText": "A simple pendulum with length $!$l$!$ is set up for an experiment. Over a period of four minutes, the pendulum makes $!$75$!$ complete oscillations.",
+      "id": "ab1b8045f62543df938ad",
+      "questionText": "A simple pendulum with length $!$l$!$ makes $!$75$!$ complete oscillations over four minutes. When the acceleration of the pendulum bob is at its maximum, the angle that the string makes with the vertical is $!$9\\degree C$!$.",
       "questionImage": "",
       "steps": [
         {
-          "id": "fd0cf4c4b64d1eb9dec57",
-          "stepText": "Calculate the efficiency of the engine up to 2 decimal places.",
+          "id": "dd18793c92c84af69c223",
+          "stepText": "What formula can be used to find the period of the pendulum?",
+          "stepText2": "Calculate the period of the pendulum up to 1 decimal place (in $!$s$!$).",
           "stepImage": "",
-          "stepSolveAnswer": ["0.37", "0.37 MJ", "0.37MJ"],
+          "stepSolveAnswer": [
+            "3.2",
+            "3.2 s",
+            "3.2 seconds",
+            "3.2 sec",
+            "3.2sec",
+            "3.2s",
+            "3.2seconds"
+          ],
           "options": [
             {
-              "optionText": "Efficiency ( $!$\\eta$!$ ) = $!$\\frac{Q_H - Q_C}{Q_H}$!$",
+              "optionText": "Period ($!$T$!$) = $!$\\frac{time (in minutes)}{number of oscillations}$!$",
+              "optionImage": "",
+              "isCorrect": false
+            },
+            {
+              "optionText": " Period ($!$T$!$) = $!$\\frac{time (in seconds)}{number of oscillations}$!$",
               "optionImage": "",
               "isCorrect": true
             },
             {
-              "optionText": "Efficiency ( $!$\\eta$!$ ) = $!$\\frac{Q_C}{Q_H}$!$",
+              "optionText": "Period ($!$T$!$) = $!$2*\\pi*\\sqrt{\\frac{l}{g}}$!$",
               "optionImage": "",
               "isCorrect": false
             }
           ]
         },
         {
-          "id": "431e6b0b6f455d81d9c41",
-          "stepText": "Calculate the temperature of the cold reservoir up to 2 decimal places (in $!$\\degree C$!$).",
+          "id": "97d212f94ba9494bbae8d",
+          "stepText": "How would you find the length, $!$l$!$, of the pendulum?",
+          "stepText2": "Calculate the length of the pendulum up to 1 decimal places (in $!$m$!$).",
           "stepImage": "",
-          "stepSolveAnswer": ["308.49", "308.49 C", "308.49C"],
+          "stepSolveAnswer": [
+            "2.5",
+            "2.5 m",
+            "2.5m",
+            "2.6 m",
+            "2.6m",
+            "2.6"
+          ],
           "options": [
             {
-              "optionText": "Use the formula $!$\\eta = 1 - \\frac{T_C}{T_H}$!$ to find $!$T_C$!$",
-              "optionImage": "",
-              "isCorrect": false
-            },
-            {
-              "optionText": "Convert temperatures to Kelvin and use the formula $!$\\eta = 1 - \\frac{T_C}{T_H}$!$ to find $!$T_C$!$",
-              "optionImage": "",
-              "isCorrect": false
-            },
-            {
-              "optionText": "Convert temperatures to Kelvin and use the formula $!$\\eta = 1 - \\frac{T_C}{T_H}$!$ to find $!$T_C$!$ and then convert back to $!$\\degree C$!$",
+              "optionText": "Use the formula $!$T = 2\\pi\\sqrt{\\frac{l}{g}}$!$",
               "optionImage": "",
               "isCorrect": true
+            },
+            {
+              "optionText": "Use the formula $!$T = \\frac{time (in seconds)}{number of oscillations}$!$",
+              "optionImage": "",
+              "isCorrect": false
             }
           ]
         }
       ]
     },
     {
-      "id": "f28ec7b0144efaa23446a",
-      "questionText": "The diagram illustrates the cycle EFGHE of a fixed mass of monatomic ideal gas",
-      "questionImage": "q2_img_1.png",
+      "id": "6607d90cd31c479aada14",
+      "questionText": "A vertical, cylindrical buoy of mass $!$0.42 kg$!$ is floating in the ocean. At $!$t = 0$!$ ,the buoy is displaced vertically downwards by a distance of $!$28 cm$!$ and begins to oscillate with simple harmonic motion. When the buoy is $!$15 cm$!$ above the water surface, the restoring force that acts on the buoy is $!$1.7 N$!$.",
+      "questionImage": "q2_img.png",
       "steps": [
         {
-          "id": "5a97ed84299bf163f2501",
-          "stepText": "Is the work done by the gas positive or negative in the process H to E?",
+          "id": "03125c7597f440a5a6747",
+          "stepText": "If the buoy is undergoing simple harmonic motion, which of the following is true?",
           "stepImage": "",
-          "stepSolveAnswer": ["negative", "negative ", "Negative", "NEGATIVE"],
           "options": [
             {
-              "optionText": "If the gas expands, the work done by the gas is positive",
+              "optionText": "The restoring force on the buoy is proportional to its displacement from the equilibrium position and acts in the opposite direction to the displacement",
               "optionImage": "",
               "isCorrect": true
             },
-            { 
-              "optionText": "If the gas expands, the work done by the gas is negative",
+            {
+              "optionText": "The net force on the buoy is zero",
+              "optionImage": "",
+              "isCorrect": false
+            },
+            {
+              "optionText": "The two forces acting on the buoy - gravity and buoyancy - are equal and opposite",
               "optionImage": "",
               "isCorrect": false
             }
           ]
         },
         {
-          "id": "3a6880c48639023b90f90",
-          "stepText": "Is H to E an adiabatic process? Answer 'yes' or 'no'.",
+          "id": "72d670685b6e428ebaf50",
+          "stepText": "Since the restoring force $!$F$!$ is proportional to the displacement $!$x$!$ and acts in the opposite direction to the displacement, it can be written as $!$F = -kx$!$ where $!$k$!$ is proportionality constant. Calculate the value of $!$k$!$ up to 3 decimal places (in $!$N/m$!$).",
           "stepImage": "",
-          "stepSolveAnswer": ["no", "no ", "No", "NO"],
+          "stepSolveAnswer": [
+            "0.113",
+            "0.113 N/m",
+            "0.113N/m"
+          ]
+        },
+        {
+          "id": "47fd8e668d884533a9a8b",
+          "stepText": "When will the buoy have maximum acceleration?",
+          "stepImage": "",
           "options": [
             {
-              "optionText": "For adiabatic processes, $!$P V^{\\frac{5}{3}} = constant$!$",
+              "optionText": "When the buoy is at its maximum displacement",
               "optionImage": "",
               "isCorrect": true
             },
             {
-              "optionText": "For adiabatic processes, the temperature of the gas remains constant",
-              "optionImage": "",
-              "isCorrect": false
-            },
-            {
-              "optionText": "For adiabatic processes, $!$P V = constant$!$",
+              "optionText": "When the buoy is at its equilibrium position",
               "optionImage": "",
               "isCorrect": false
             }
           ]
         },
         {
-          "id": "4e320601fe47d0bf9604e",
-          "stepText": "Calculate an approximate value for the net work done by the gas in the cycle (in $!$kJ$!$).",
+          "id": "6a2f3efe64f44bcf909f4",
+          "stepText": "Calculate the maximum acceleration of the buoy up to 1 decimal place (in $!$m/s^2$!$).",
           "stepImage": "",
-          "stepSolveAnswer": ["50", "50 kJ", "50KJ", "50kj", "50 KJ"],
-          "options": [
-            {
-              "optionText": "The net work, $!$W$!$, is $!$W = Q - \\Delta U$!$",
-              "optionImage": "",
-              "isCorrect": false
-            },
-            {
-              "optionText": "The net work, $!$W$!$, is the area of the rectangle $!$EFGH$!$",
-              "optionImage": "",
-              "isCorrect": true
-            }
+          "stepSolveAnswer": [
+            "7.5",
+            "7.5 m/s^2",
+            "7.5m/s^2"
           ]
         }
       ]
