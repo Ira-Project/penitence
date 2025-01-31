@@ -61,7 +61,7 @@
       "steps": [
         {
           "id": "f25005a97ed84299bf163",
-          "stepText": "Is the work done by the gas positive or negative in the process H to E?",
+          "stepText": "How do you know if the work done by the gas is positive or negative?",
           "stepImage": "",
           "options": [
             {
@@ -77,8 +77,72 @@
           ]
         },
         {
+          "id": "90fb33a6880c48639023b",
+          "stepText": "Is the work done by the gas positive or negative in the process E to F?",
+          "stepImage": "",
+          "stepSolveAnswer": ["positive", "positive ", "Positive", "POSITIVE"]
+        },
+        {
+          "id": "90fb33a6880c48639023b",
+          "stepText": "Is the work done by the gas positive or negative in the process F to G?",
+          "stepImage": "",
+          "stepSolveAnswer": ["positive", "positive ", "Positive", "POSITIVE"]
+        },
+        {
+          "id": "90fb33a6880c48639023b",
+          "stepText": "When does the work done by the gas equal to zero?",
+          "stepText2": "What is the work done by the gas in the process G to H?",
+          "stepImage": "",
+          "stepSolveAnswer": ["0", "0 ", "zero", "ZERO", "Zero"],
+          "options": [
+            {
+              "optionText": "When the pressure of the gas is constant",
+              "optionImage": "",
+              "isCorrect": false
+            },
+            {
+              "optionText": "When the volume of the gas is constant",
+              "optionImage": "",
+              "isCorrect": true
+            },
+            {
+              "optionText": "When the temperature of the gas is constant",
+              "optionImage": "",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "id": "90fb33a6880c48639023b",
+          "stepText": "Is the work done by the gas positive or negative in the process H to E?",
+          "stepImage": "",
+          "stepSolveAnswer": ["negative", "negative ", "Negative", "NEGATIVE"]
+        },
+        {
+          "id": "90fb33a6880c48639023b",
+          "stepText": "How would you calculate the magnitude of the work done by the gas in each process?",
+          "stepImage": "",
+          "options": [
+            {
+              "optionText": "Use the formula $!$W = Fs$!$",
+              "optionImage": "",
+              "isCorrect": false
+            },
+            {
+              "optionText": "Use the formula $!$W = P \\Delta V$!$",
+              "optionImage": "",
+              "isCorrect": false
+            },
+            {
+              "optionText": "Work done is the area under the curve for each process",
+              "optionImage": "",
+              "isCorrect": true
+            }
+          ]
+        },
+        {
           "id": "4e4e320601fe47d0bf960",
-          "stepText": "In this question, how would you calculate the net work done by the gas?",
+          "stepText": "How would you calculate the net work done by the gas?",
           "stepText2": "Calculate an approximate value for the net work done by the gas in the cycle (in $!$kJ$!$).",
           "stepImage": "",
           "stepSolveAnswer": ["50", "50 kJ", "50KJ", "50kj", "50 KJ"],
@@ -95,30 +159,6 @@
             }
           ]
         },
-        {
-          "id": "90fb33a6880c48639023b",
-          "stepText": "Which is true for adiabatic processes?",
-          "stepText2": "Is H to E an adiabatic process? Answer 'yes' or 'no'.",
-          "stepImage": "",
-          "stepSolveAnswer": ["no", "no ", "No", "NO"],
-          "options": [
-            {
-              "optionText": "For adiabatic processes, $!$P V^{\\frac{5}{3}} = constant$!$",
-              "optionImage": "",
-              "isCorrect": true
-            },
-            {
-              "optionText": "For adiabatic processes, the temperature of the gas remains constant",
-              "optionImage": "",
-              "isCorrect": false
-            },
-            {
-              "optionText": "For adiabatic processes, $!$P V = constant$!$",
-              "optionImage": "",
-              "isCorrect": false
-            }
-          ]
-        }
       ]
     }
   ]
