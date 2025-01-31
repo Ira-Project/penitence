@@ -18,42 +18,42 @@
       "answerOptions": [
         {
           "id": "a59ebebb3d2147578c37f",
-          "optionText": "Time period of the pendulum on Earth is calculated using the formula $!$T = \\frac{total time (in seconds)}{number of oscillations}$!$, where 2 crossings of the equilibrium position is considered as 1 oscillation",
+          "optionText": "Find time period, $!$T$!$, using the formula $!$T = \\frac{total time (in seconds)}{number of oscillations}$!$",
           "optionImage": ""
         },
         {
           "id": "b032c53b509d4f46bf844",
-          "optionText": "Time period of the pendulum on Earth is calculated using the formula $!$T = 2\\pi\\sqrt{\\frac{L}{g}}, where T is the time period, L is the length of the pendulum and g is the gravitational acceleration$!$",
+          "optionText": "Find time period, $!$T$!$, using the formula $!$T = 2\\pi\\sqrt{\\frac{L}{g}}$!$",
           "optionImage": ""
         },
         {
           "id": "0402b5701e234598b4fc4",
-          "optionText": "Time period of the pendulum on Earth is calculated using the formula $!$T = \\frac{total time (in seconds)}{number of crossings of the equilibrium position}$!$",
+          "optionText": "Find time period, $!$T$!$, using the formula $!$T = \\frac{total time (in seconds)}{number of crossings of the equilibrium position}$!$",
           "optionImage": ""
         },
         {
           "id": "8c4d43a50d064ff39e0f0",
-          "optionText": "Length of the pendulum on Earth is calculated using the formula $!$T = 2\\pi\\sqrt{\\frac{L}{g}}, where T is the time period, L is the length of the pendulum and g is the gravitational acceleration$!$",
+          "optionText": "Find length of the pendulum, $!$L$!$, using the formula $!$T = 2\\pi\\sqrt{\\frac{L}{g}}$!$",
           "optionImage": ""
         },
         {
           "id": "7cf1b3a3e44d4d90972f2",
-          "optionText": "Gravitational acceleration on Planet X is calculated using the formula $!$T = 2\\pi\\sqrt{\\frac{L}{g}}, where $!$T = 8.0$!$ seconds, L is the length of the pendulum, and g is the gravitational acceleration$!$",
+          "optionText": "Find gravitational acceleration on Planet X, $!$g$!$, using the formula $!$T = 2\\pi\\sqrt{\\frac{L}{g}}$!$",
           "optionImage": ""
         },
         {
           "id": "5c2c9a13bd934551b9f54",
-          "optionText": "Time period of the pendulum on Planet X is calculated using the formula $!$T = \\frac{total time (in seconds)}{number of oscillations}$!$",
+          "optionText": "Find number of oscillations using the formula $!$T = \\frac{total time (in seconds)}{number of oscillations}$!$",
           "optionImage": ""
         },
         {
           "id": "07ce8f1b2f4b4745bd3a3",
-          "optionText": "Length of the pendulum on Planet X is calculated using the formula $!$T = 2\\pi\\sqrt{\\frac{L}{g}}, where $!$T = 8.0$!$ seconds, L is the length of the pendulum, and g is the gravitational acceleration$!$",
+          "optionText": "Find length of the pendulum, $!$L$!$, on Planet X using the formula $!$T = 2\\pi\\sqrt{\\frac{L}{g}}$!$",
           "optionImage": ""
         },
         {
           "id": "fe46bead4ac24e9cacb0f",
-          "optionText": "Gravitational acceleration on Earth is calculated using the formula $!$T = 2\\pi\\sqrt{\\frac{L}{g}}, where $!$T = 8.0$!$ seconds, L is the length of the pendulum, and g is the gravitational acceleration$!$",
+          "optionText": "Find gravitational acceleration on Earth, $!$g$!$, using the formula $!$T = 2\\pi\\sqrt{\\frac{L}{g}}$!$",
           "optionImage": ""
         }
       ],
