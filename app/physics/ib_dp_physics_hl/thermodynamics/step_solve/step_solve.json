@@ -6,7 +6,7 @@
   "questions": [
     {
       "id": "a56d8fe7a1034c1092e07", 
-      "questionText": "A Carnot heat engine operates using an ideal monatomic gas. In one complete cycle, the engine absorbs $!$3.42 MJ$!$ of heat from the hot reservoir at $!$650 \\degree C$!$ and releases $!$2.15 MJ$!$ of heat to the cold reservoir.",
+      "questionText": "A Carnot heat engine operates using an ideal monatomic gas. In one complete cycle, the engine absorbs $!$3.42 MJ$!$ of heat from the hot reservoir at $!$650 \\degree C$!$ and releases $!$2.15 MJ$!$ of heat to the cold reservoir. What is the temperature of the cold reservoir?",
       "questionImage": "",
       "steps": [
         {
@@ -56,7 +56,7 @@
     },
     {
       "id": "6af28ec7b0144efaa2344",
-      "questionText": "The diagram illustrates the cycle EFGHE of a fixed mass of monatomic ideal gas",
+      "questionText": "The diagram illustrates the cycle EFGHE of a fixed mass of monatomic ideal gas. What is the net work done by the gas in the cycle?",
       "questionImage": "q2_img_1.png",
       "steps": [
         {
@@ -73,6 +73,25 @@
               "optionText": "If the gas expands, the work done by the gas is negative",
               "optionImage": "",
               "isCorrect": false
+            }
+          ]
+        },
+        {
+          "id": "4e4e320601fe47d0bf960",
+          "stepText": "In this question, how would you calculate the net work done by the gas?",
+          "stepText2": "Calculate an approximate value for the net work done by the gas in the cycle (in $!$kJ$!$).",
+          "stepImage": "",
+          "stepSolveAnswer": ["50", "50 kJ", "50KJ", "50kj", "50 KJ"],
+          "options": [
+            {
+              "optionText": "The net work, $!$W$!$, is $!$W = Q - \\Delta U$!$",
+              "optionImage": "",
+              "isCorrect": false
+            },
+            {
+              "optionText": "The net work, $!$W$!$, is the area of the rectangle $!$EFGH$!$",
+              "optionImage": "",
+              "isCorrect": true
             }
           ]
         },
@@ -97,25 +116,6 @@
               "optionText": "For adiabatic processes, $!$P V = constant$!$",
               "optionImage": "",
               "isCorrect": false
-            }
-          ]
-        },
-        {
-          "id": "4e4e320601fe47d0bf960",
-          "stepText": "In this question, how would you calculate the net work done by the gas?",
-          "stepText2": "Calculate an approximate value for the net work done by the gas in the cycle (in $!$kJ$!$).",
-          "stepImage": "",
-          "stepSolveAnswer": ["50", "50 kJ", "50KJ", "50kj", "50 KJ"],
-          "options": [
-            {
-              "optionText": "The net work, $!$W$!$, is $!$W = Q - \\Delta U$!$",
-              "optionImage": "",
-              "isCorrect": false
-            },
-            {
-              "optionText": "The net work, $!$W$!$, is the area of the rectangle $!$EFGH$!$",
-              "optionImage": "",
-              "isCorrect": true
             }
           ]
         }
