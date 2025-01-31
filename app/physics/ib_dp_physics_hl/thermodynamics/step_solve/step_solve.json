@@ -83,13 +83,13 @@
           "stepSolveAnswer": ["positive", "positive ", "Positive", "POSITIVE"]
         },
         {
-          "id": "90fb33a6880c48639023b",
+          "id": "90fb33a6880c486390245",
           "stepText": "Is the work done by the gas positive or negative in the process F to G?",
           "stepImage": "",
           "stepSolveAnswer": ["positive", "positive ", "Positive", "POSITIVE"]
         },
         {
-          "id": "90fb33a6880c48639023b",
+          "id": "90fb33a6880c48639027g",
           "stepText": "When does the work done by the gas equal to zero?",
           "stepText2": "What is the work done by the gas in the process G to H?",
           "stepImage": "",
@@ -113,13 +113,13 @@
           ]
         },
         {
-          "id": "90fb33a6880c48639023b",
+          "id": "90fb33a6880c48639025k",
           "stepText": "Is the work done by the gas positive or negative in the process H to E?",
           "stepImage": "",
           "stepSolveAnswer": ["negative", "negative ", "Negative", "NEGATIVE"]
         },
         {
-          "id": "90fb33a6880c48639023b",
+          "id": "90fb33a6880c48639022n",
           "stepText": "How would you calculate the magnitude of the work done by the gas in each process?",
           "stepImage": "",
           "options": [
