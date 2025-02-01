@@ -57,12 +57,12 @@
     {
       "id": "6af28ec7b0144efaa2344",
       "questionText": "The diagram illustrates the cycle EFGHE of a fixed mass of monatomic ideal gas. What is the net work done by the gas in the cycle?",
-      "questionImage": "",
+      "questionImage": "https://converge-question-images.s3.us-west-1.amazonaws.com/thermodynamics_ss_q2_img_1.png",
       "steps": [
         {
           "id": "f25005a97ed84299bf163",
           "stepText": "First, let's find the work done by the gas in each process. How do you know if the work done by the gas is positive or negative?",
-          "stepImage": "https://converge-question-images.s3.us-west-1.amazonaws.com/thermodynamics_ss_q2_img_1.png",
+          "stepImage": "",
           "options": [
             {
               "optionText": "If the gas expands, the work done by the gas is positive",

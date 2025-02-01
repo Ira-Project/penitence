@@ -72,7 +72,7 @@
     {
       "id": "6607d90cd31c479aada14",
       "questionText": "A vertical, cylindrical buoy of mass $!$0.42 kg$!$ is floating in the ocean. At $!$t = 0$!$ ,the buoy is displaced vertically downwards by a distance of $!$28 cm$!$ and begins to oscillate with simple harmonic motion. When the buoy is $!$15 cm$!$ above the water surface, the restoring force that acts on the buoy is $!$1.7 N$!$. What is the maximum acceleration of the buoy?",
-      "questionImage": "q2_img.png",
+      "questionImage": "https://converge-question-images.s3.us-west-1.amazonaws.com/shm_ss_q2.png",
       "steps": [
         {
           "id": "03125c7597f440a5a6747",
