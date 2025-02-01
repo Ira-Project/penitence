@@ -1,7 +1,7 @@
 {
   "name": "Thermodynamics",
-  "topicIdDev": "1",
-  "topicIdProd": "",
+  "topicIdDev": "6PPsDBZy9nMXjt6GeUcOp",
+  "topicIdProd": "jA5iZ5cKkLy1GIvdT30HQ",
   "latexDelimiter": "$!$",
   "questions": [
     {
@@ -57,12 +57,12 @@
     {
       "id": "6af28ec7b0144efaa2344",
       "questionText": "The diagram illustrates the cycle EFGHE of a fixed mass of monatomic ideal gas. What is the net work done by the gas in the cycle?",
-      "questionImage": "q2_img_1.png",
+      "questionImage": "",
       "steps": [
         {
           "id": "f25005a97ed84299bf163",
           "stepText": "First, let's find the work done by the gas in each process. How do you know if the work done by the gas is positive or negative?",
-          "stepImage": "",
+          "stepImage": "https://converge-question-images.s3.us-west-1.amazonaws.com/thermodynamics_ss_q2_img_1.png",
           "options": [
             {
               "optionText": "If the gas expands, the work done by the gas is positive",
@@ -80,13 +80,15 @@
           "id": "90fb33a6880c48639023b",
           "stepText": "In the process E to F, is the work done by the gas positive or negative?",
           "stepImage": "",
-          "stepSolveAnswer": ["positive", "positive ", "Positive", "POSITIVE"]
+          "stepSolveAnswer": ["positive", "positive ", "Positive", "POSITIVE"],
+          "options": []
         },
         {
           "id": "90fb33a6880c486390245",
           "stepText": "Similarly, in the process F to G, is the work done by the gas positive or negative?",
           "stepImage": "",
-          "stepSolveAnswer": ["positive", "positive ", "Positive", "POSITIVE"]
+          "stepSolveAnswer": ["positive", "positive ", "Positive", "POSITIVE"],
+          "options": []
         },
         {
           "id": "90fb33a6880c48639027g",
@@ -116,7 +118,8 @@
           "id": "90fb33a6880c48639025k",
           "stepText": "Finally, in the process H to E, is the work done by the gas positive or negative?",
           "stepImage": "",
-          "stepSolveAnswer": ["negative", "negative ", "Negative", "NEGATIVE"]
+          "stepSolveAnswer": ["negative", "negative ", "Negative", "NEGATIVE"],
+          "options": []
         },
         {
           "id": "90fb33a6880c48639022n",

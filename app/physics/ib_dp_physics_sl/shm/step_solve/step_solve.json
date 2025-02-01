@@ -1,12 +1,12 @@
 {
   "name": "Simple Harmonic Motion",
-  "topicIdDev": "",
-  "topicIdProd": "",
+  "topicIdDev": "QoUD52AFmibtZ7SGqIbmI",
+  "topicIdProd": "qY4JbQSoTts2eHzmUE9Gx",
   "latexDelimiter": "$!$",
   "questions": [
     {
       "id": "ab1b8045f62543df938ad",
-      "questionText": "A simple pendulum with length $!$l$!$ makes $!$75$!$ complete oscillations over four minutes. Find the length, $!$l$!$, of the pendulum.",
+      "questionText": "A simple pendulum with length $!$l$!$ makes 75 complete oscillations over four minutes. Find the length, $!$l$!$, of the pendulum.",
       "questionImage": "",
       "steps": [
         {
@@ -61,7 +61,7 @@
               "isCorrect": true
             },
             {
-              "optionText": "Use the formula $!$T = \\frac{time (in seconds)}{number of oscillations}$!$",
+              "optionText": "Use the formula $!$T = \\frac{\\text{time (in seconds)}}{\\text{number of oscillations}}$!$",
               "optionImage": "",
               "isCorrect": false
             }
@@ -104,7 +104,8 @@
             "0.113",
             "0.113 N/m",
             "0.113N/m"
-          ]
+          ],
+          "options": []
         },
         {
           "id": "47fd8e668d884533a9a8b",
@@ -131,7 +132,8 @@
             "7.5",
             "7.5 m/s^2",
             "7.5m/s^2"
-          ]
+          ],
+          "options": []
         }
       ]
     }
