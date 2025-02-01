@@ -11,7 +11,7 @@
       "steps": [
         {
           "id": "57fd0cf4c4b64d1eb9dec",
-          "stepText": "What is the formula for the efficiency of an engine?",
+          "stepText": "First, let's find the efficiency of the engine. What is the formula for the efficiency of an engine?",
           "stepText2": "Calculate the efficiency of the engine up to 2 decimal places.",
           "stepImage": "",
           "stepSolveAnswer": ["0.37", "0.37 MJ", "0.37MJ"],
@@ -30,7 +30,7 @@
         },
         {
           "id": "41431e6b0b6f455d81d9c",
-          "stepText": "What formula can be used to find the temperature of the cold reservoir?",
+          "stepText": "Now, we can use the efficiency to find the temperature of the cold reservoir. What formula can be used to find the temperature of the cold reservoir?",
           "stepText2": "Calculate the temperature of the cold reservoir up to 2 decimal places (in $!$\\degree C$!$).",
           "stepImage": "",
           "stepSolveAnswer": ["308.49", "308.49 C", "308.49C"],
@@ -61,7 +61,7 @@
       "steps": [
         {
           "id": "f25005a97ed84299bf163",
-          "stepText": "How do you know if the work done by the gas is positive or negative?",
+          "stepText": "First, let's find the work done by the gas in each process. How do you know if the work done by the gas is positive or negative?",
           "stepImage": "",
           "options": [
             {
@@ -78,19 +78,19 @@
         },
         {
           "id": "90fb33a6880c48639023b",
-          "stepText": "Is the work done by the gas positive or negative in the process E to F?",
+          "stepText": "In the process E to F, is the work done by the gas positive or negative?",
           "stepImage": "",
           "stepSolveAnswer": ["positive", "positive ", "Positive", "POSITIVE"]
         },
         {
           "id": "90fb33a6880c486390245",
-          "stepText": "Is the work done by the gas positive or negative in the process F to G?",
+          "stepText": "Similarly, in the process F to G, is the work done by the gas positive or negative?",
           "stepImage": "",
           "stepSolveAnswer": ["positive", "positive ", "Positive", "POSITIVE"]
         },
         {
           "id": "90fb33a6880c48639027g",
-          "stepText": "When does the work done by the gas equal to zero?",
+          "stepText": "We know that the work done by the gas is positive in the process E to F and F to G. But when does the work done by the gas equal to zero?",
           "stepText2": "What is the work done by the gas in the process G to H?",
           "stepImage": "",
           "stepSolveAnswer": ["0", "0 ", "zero", "ZERO", "Zero"],
@@ -114,13 +114,13 @@
         },
         {
           "id": "90fb33a6880c48639025k",
-          "stepText": "Is the work done by the gas positive or negative in the process H to E?",
+          "stepText": "Finally, in the process H to E, is the work done by the gas positive or negative?",
           "stepImage": "",
           "stepSolveAnswer": ["negative", "negative ", "Negative", "NEGATIVE"]
         },
         {
           "id": "90fb33a6880c48639022n",
-          "stepText": "How would you calculate the magnitude of the work done by the gas in each process?",
+          "stepText": "Now, let's calculate the magnitude of the work done by the gas in each process. How would you calculate the magnitude of the work done by the gas when given a $!$P-V$!$ graph?",
           "stepImage": "",
           "options": [
             {
@@ -142,7 +142,7 @@
         },
         {
           "id": "4e4e320601fe47d0bf960",
-          "stepText": "How would you calculate the net work done by the gas?",
+          "stepText": "Finally, let's calculate the net work done by the gas. How would you calculate it using a $!$P-V$!$ graph?",
           "stepText2": "Calculate an approximate value for the net work done by the gas in the cycle (in $!$kJ$!$).",
           "stepImage": "",
           "stepSolveAnswer": ["50", "50 kJ", "50KJ", "50kj", "50 KJ"],
