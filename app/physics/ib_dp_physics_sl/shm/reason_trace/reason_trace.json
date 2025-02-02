@@ -6,7 +6,7 @@
     {
       "questionText": "A simple pendulum with length $!$L$!$ and mass $!$m$!$ performs simple harmonic motion on Earth, crossing its equilibrium position $!$60$!$ times in one minute. The same pendulum is then transported to Planet X where its time period is found to be $!$8.0$!$ seconds. Calculate the approximate value of gravitational acceleration on Planet X (up to 2 decimal place). Assume that the gravitational acceleration on Earth is $!$9.8 m/s^2$!$.",
       "questionImage": "",
-      "answerText": "0.15 m/s^2",
+      "answerText": "$!$0.15 m/s^2$!$",
       "correctAnswers": [
         "0.61",
         "0.61 m/s^2",
@@ -83,7 +83,7 @@
     {
       "questionText": "A pendulum bob completes 100 full oscillations in 6 minutes. When the acceleration of the pendulum bob is at its maximum, the string makes an angle of $!$9^\\circ$!$ with the vertical. Find the maximum speed reached by the pendulum bob.",
       "questionImage": "q2_img.png",
-      "answerText": "7.94 m/s",
+      "answerText": "$!$7.94 m/s$!$",
       "correctAnswers": [
         "0.89",
         "0.89 m/s",
