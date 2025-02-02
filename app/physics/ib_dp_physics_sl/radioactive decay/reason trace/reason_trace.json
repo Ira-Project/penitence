@@ -1,0 +1,27 @@
+{
+    "id": "",
+    "questionText": "A radioactive sample has an initial activity of $!$240 Bq$!$. At the measurement location, there is background activity equal to $!$20\\%$!$ of the sample's initial activity. If the radioactive nuclide has a half-life of 6 hours, what is the total activity measured at this location after 18 hours?",
+    "questionImage": "",
+    "steps": [
+        {
+            "id": "",
+            "stepText": "First, let's determine the background activity at the measurement location, which is equal to $!$20\\%$!$ of the sample's initial activity. What is the background activity?",
+            "stepImage": "",
+            "stepSolveAnswer": [
+                "48 Bq",
+                "48",
+                "48Bq",
+                "48 bq",
+                "48bq"
+            ],
+            "options": []
+        },
+        {
+            "id": "",
+            "stepText": "Now, let's determine the activity of the sample after 18 hours. The activity of the sample after 18 hours is equal to the initial activity of the sample minus the background activity. What is the activity of the sample after 18 hours?",
+            "stepImage": "",
+            "stepSolveAnswer": [],
+            "options": []
+        }
+    ]
+}
