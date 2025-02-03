@@ -1,6 +1,7 @@
 {
   "name": "Simple Harmonic Motion",
-  "topicId": "",
+  "topicIdDev": "QoUD52AFmibtZ7SGqIbmI",
+  "topicIdProd": "qY4JbQSoTts2eHzmUE9Gx",
   "latexDelimiter": "$!$",
   "reasoningQuestions": [
     {
@@ -82,7 +83,7 @@
     },
     {
       "questionText": "A pendulum bob completes 100 full oscillations in 6 minutes. When the acceleration of the pendulum bob is at its maximum, the string makes an angle of $!$9^\\circ$!$ with the vertical. Find the maximum speed reached by the pendulum bob.",
-      "questionImage": "q2_img.png",
+      "questionImage": "https://converge-question-images.s3.us-west-1.amazonaws.com/shm_rt_q2.png",
       "answerText": "$!$7.94 m/s$!$",
       "correctAnswers": [
         "0.89",
