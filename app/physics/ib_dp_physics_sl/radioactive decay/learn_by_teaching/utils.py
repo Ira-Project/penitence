@@ -156,8 +156,8 @@ def attempt_question(question, required_concepts, required_formulas, correct_sol
             try:
                 working = working + step["explanation"] + "\n" + step["calculation"] + "\n"
             except:
+                working = working + "I was unable to attempt the question based on the provided explanation."
                 continue
         answer = response_json["final_answer"]
         is_correct = response_json["is_correct"]
-        # print(response.choices[0].message.content)
         return working, answer, is_correct

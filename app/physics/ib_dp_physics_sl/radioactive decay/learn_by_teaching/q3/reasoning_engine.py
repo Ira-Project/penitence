@@ -12,14 +12,14 @@ async def compute_q1(input: InputModel):
     formulas = "[" + ','.join(formulas) + "]"
 
     correct_solution = """Correct Solution:
-        I use the concept that half-life is the time required for the amount of radioactive nuclides to be reduced by half.
-        $!$\\text{Given half-life} = 50\\,s, \\quad \\text{Time elapsed} = 100\\,s, \\quad \\text{Number of half-lives} = \\frac{100}{50} = 2\\,.$!
-        Applying the law of radioactive decay, the sample is halved each half-life. After 2 half-lives, the number is reduced by a factor of 2^2.
-        $!$N_{final} = \\frac{1000}{2^2} = \\frac{1000}{4} = 250\\,.$!
-        Correct Answer: 250"""
-
+        Starting with Uranium-238, which has 92 protons, I apply the alpha decay process. An alpha particle has 2 protons, so upon emission the new nucleus loses 2 protons.
+        $!$92 - 2 = 90$!$
+        Next, I apply the beta-minus decay process. Beta-minus decay increases the atomic number by 1 by emitting a beta particle.
+        $!$90 + 1 = 91$!$
+        Correct Answer: 91"""   
+    
     working, answer, is_correct = attempt_question(question, required_concepts, required_formulas, correct_solution, explanation, formulas)
-
+    
     return {
         'status': 200,
         'body': {
@@ -28,4 +28,4 @@ async def compute_q1(input: InputModel):
             'answer': answer,
             'concepts': []
         }
-    }   
+    }    

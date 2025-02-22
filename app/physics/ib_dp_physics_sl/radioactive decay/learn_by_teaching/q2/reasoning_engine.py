@@ -22,11 +22,6 @@ async def compute_q1(input: InputModel):
     
     working, answer, is_correct = attempt_question(question, required_concepts, required_formulas, correct_solution, explanation, formulas)
 
-    print(working)
-    print(answer)
-    print(is_correct)
-
-    
     return {
         'status': 200,
         'body': {
