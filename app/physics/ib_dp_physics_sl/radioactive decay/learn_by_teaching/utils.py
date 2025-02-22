@@ -29,7 +29,7 @@ def solve_question(question, required_concepts, required_formulas):
     messages = [{"role": "system", "content": ai_solver_instructions_question + question + "\n\n" + ai_solver_instructions_concepts + \
                  concept_questions_list + "\n" + concept_answers_list + "\n" + ai_solver_instructions_formulas + concept_formulas_list + "\n\n" + \
                     ai_solver_instructions_correct_answer_pointers},
-        {"role": "user", "content": "Solve the question by applying ONLY the 'concept_answers' and 'concept_formulas' provided. You DO NOT need any other formula to solve the question."}
+        {"role": "user", "content": "Solve the question by applying ALL the 'concept_answers' and 'concept_formulas' provided. You DO NOT need any other formula to solve the question."}
     ]
 
     response = client.chat.completions.create(
@@ -93,10 +93,22 @@ def attempt_question(question, required_concepts, required_formulas, correct_sol
         required_formulas_list = required_formulas_list + formula + ",\n"
     required_formulas_list = required_formulas_list + "]"
 
+    required_concept_missing_list = "required_concept_missing: ["
+    for concept in required_concepts:
+        required_concept_missing_list = required_concept_missing_list + concept_missing[concept] + ",\n"
+    required_concept_missing_list = required_concept_missing_list + "]"
+
+    required_formulas_missing_list = "required_formulas_missing: ["
+    for formula in required_formulas:
+        required_formulas_missing_list = required_formulas_missing_list + concept_formulas_missing[formula] + ",\n"
+    required_formulas_missing_list = required_formulas_missing_list + "]"
+
     messages = [{"role": "system", "content": ai_student_instructions_question + question + "\n\n" + ai_student_instructions_required_concepts + \
-                 required_concepts_questions_list + "\n" + required_concepts_answers_list + "\n" + ai_student_instructions_required_formulas + \
-                required_formulas_list + "\n\n" + correct_solution + "\n\n" + ai_student_instructions_pointers},
-        {"role": "user", "content": "Use the teacher's explanation to attempt the question. Till the teacher correctly mentions all the required_concept_answers and required_formulas, you have to keep giving incorrect solutions. In the case that NONE of the required_concept_answers are mentioned, you must state that you do not know how to solve the question. Never mention the required concept answers or formulas.\n" + "The teacher states that:\n" + provided_concepts + "\n" + "The teacher also provides the following formulas:\n" + provided_formulas}
+                required_concepts_questions_list + "\n" + required_concepts_answers_list + "\n" + ai_student_instructions_required_formulas + \
+                required_formulas_list + "\n" + ai_student_instructions_required_concept_missing + "\n" + required_concept_missing_list + "\n" + \
+                ai_student_instructions_required_formulas_missing + "\n" + required_formulas_missing_list + "\n\n" + \
+                correct_solution + "\n\n" + ai_student_instructions_pointers},
+        {"role": "user", "content": "Use the teacher's explanation to attempt the question. Till the teacher correctly mentions all the required_concept_answers and required_formulas, you CANNOT give the correct solution. In the case that NONE of the required_concept_answers are mentioned, you must state that you do not know how to solve the question. Never mention the required concept answers or formulas.\n" + "The teacher states that:\n" + provided_concepts + "\n" + "The teacher also provides the following formulas:\n" + provided_formulas}
     ]
 
     response = client.chat.completions.create(
