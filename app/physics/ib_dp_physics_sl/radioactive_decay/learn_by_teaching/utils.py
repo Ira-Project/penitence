@@ -156,7 +156,6 @@ def attempt_question(question, required_concepts, required_formulas, correct_sol
         working = "I was unable to attempt the question."
         answer = ""
         is_correct = False
-        # print("Refusal: ", response.choices[0].message.refusal)
         return working, answer, is_correct
     else:
         response_json = json.loads(response.choices[0].message.content)
@@ -164,10 +163,12 @@ def attempt_question(question, required_concepts, required_formulas, correct_sol
         for step in response_json["steps"]:
             try:
                 working = working + step["explanation"] + \
-                    "\n" + step["calculation"] + "\n"
+                    "\n" + insert_latex(step["calculation"]) + "\n"
             except:
                 working = working + "I was unable to attempt the question based on the provided explanation."
                 continue
-        answer = response_json["final_answer"]
+        answer = insert_latex(response_json["final_answer"])
         is_correct = response_json["is_correct"]
+        if working == "":
+            working = "I was unable to attempt the question based on the provided explanation."
         return working, answer, is_correct
