@@ -5,7 +5,7 @@ from ..utils import *
 from ......input_models import InputModel
 
 
-async def compute_q1(input: InputModel):
+async def compute_q2(input: InputModel):
     formulas = input.formula
     explanation = input.explanation
 
@@ -19,8 +19,9 @@ async def compute_q1(input: InputModel):
         Finally, employing the formula $!$E=mc^2$!$, the binding energy (energy needed to separate the nucleons) is obtained. Converting 1 u to energy units using 1 u \\( \\approx 931.5\\,MeV/c^2 \\).
         $!$E = \\Delta m\\,c^2 = (0.002603\\,u)\\,c^2 \\approx 0.002603 \\times 931.5\\,MeV \\approx 2.424\\,MeV.$!$
         Correct Answer: $!$2.424\\,MeV$!$"""
-    
-    working, answer, is_correct = attempt_question(question, required_concepts, required_formulas, correct_solution, explanation, formulas)
+
+    working, answer, is_correct = attempt_question(
+        question, required_concepts, required_formulas, correct_solution, explanation, formulas)
 
     return {
         'status': 200,
@@ -30,4 +31,4 @@ async def compute_q1(input: InputModel):
             'answer': answer,
             'concepts': []
         }
-    }   
+    }
