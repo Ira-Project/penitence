@@ -5,7 +5,7 @@ from ..utils import *
 from ......input_models import InputModel
 
 
-async def compute_q1(input: InputModel):
+async def compute_q3(input: InputModel):
     formulas = input.formula
     explanation = input.explanation
 
@@ -16,10 +16,11 @@ async def compute_q1(input: InputModel):
         $!$92 - 2 = 90$!$
         Next, I apply the beta-minus decay process. Beta-minus decay increases the atomic number by 1 by emitting a beta particle.
         $!$90 + 1 = 91$!$
-        Correct Answer: 91"""   
-    
-    working, answer, is_correct = attempt_question(question, required_concepts, required_formulas, correct_solution, explanation, formulas)
-    
+        Correct Answer: 91"""
+
+    working, answer, is_correct = attempt_question(
+        question, required_concepts, required_formulas, correct_solution, explanation, formulas)
+
     return {
         'status': 200,
         'body': {
@@ -28,4 +29,4 @@ async def compute_q1(input: InputModel):
             'answer': answer,
             'concepts': []
         }
-    }    
+    }
