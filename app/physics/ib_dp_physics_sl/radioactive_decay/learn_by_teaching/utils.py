@@ -167,7 +167,10 @@ def attempt_question(question, required_concepts, required_formulas, correct_sol
             except:
                 working = working + "I was unable to attempt the question based on the provided explanation."
                 continue
-        answer = insert_latex(response_json["final_answer"])
+        if response_json["final_answer"] == "":
+            answer = "Could not compute."
+        else:
+            answer = insert_latex(response_json["final_answer"])
         is_correct = response_json["is_correct"]
         if working == "":
             working = "I was unable to attempt the question based on the provided explanation."
