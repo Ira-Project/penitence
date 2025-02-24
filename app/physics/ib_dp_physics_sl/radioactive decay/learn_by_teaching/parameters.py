@@ -14,7 +14,7 @@ ai_solver_instructions_correct_answer_pointers = "Keep these points in mind whil
     "5) Your response should be a JSON format with the following fields: 'steps' and 'final_answer'. The 'steps' field will be an array of objects, each containing 'explanation' and 'calculation' fields. The 'explanation' field should contain less than 100 words, while the 'calculation' field should contain all the LaTeX code for the calculations done in that step. If there are no calculations done in a step, the 'calculation' field should be an empty string. The 'final_answer' field should contain computed numerical answer to the question."
 
 concept_questions = [
-    "what is the law of radioactive decay?",
+    "state the law of radioactive decay?",
     "what is the half-life of a radioactive sample?",
     "What is the mass defect of a radioactive element?",
     "how is binding energy related to the energy needed to separate the nucleons of a radioactive element?",
@@ -30,7 +30,7 @@ concept_questions = [
 ]
 
 concept_answers = {}
-concept_answers[concept_questions[0]] = "The law of radioactive decay states that the rate of decay of radioactive nuclides is not constant. Rather, it is proportional to the number of radioactive nuclides present in the sample at any given time."
+concept_answers[concept_questions[0]] = "The rate of decay of radioactive nuclides is not constant. Rather, it is proportional to the number of radioactive nuclides present in the sample at any given time."
 concept_answers[concept_questions[1]] = "Half-life is the time after which the number of radioactive nuclides in a sample are reduced by a factor of 2."
 concept_answers[concept_questions[2]] = "The mass defect of a radioactive element is the difference between the mass of the element and the sum of the masses of its nucleons."
 concept_answers[concept_questions[3]] = "The binding energy of a radioactive element is the energy needed to separate the nucleons of the element."
