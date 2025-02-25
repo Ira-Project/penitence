@@ -18,8 +18,7 @@ async def compute_q3(input: InputModel):
         $!$90 + 1 = 91$!$
         Correct Answer: 91"""
 
-    working, answer, is_correct = attempt_question(
-        question, required_concepts, required_formulas, correct_solution, explanation, formulas)
+    working, answer, is_correct = attempt_question(question, required_concepts, correct_solution, explanation, formulas)
 
     return {
         'status': 200,

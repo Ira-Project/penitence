@@ -18,7 +18,7 @@ async def compute_q1(input: InputModel):
         $!$N_{final} = \\frac{1000}{2^2} = \\frac{1000}{4} = 250\\,.$!
         Correct Answer: 250"""
 
-    working, answer, is_correct = attempt_question(question, required_concepts, required_formulas, correct_solution, explanation, formulas)
+    working, answer, is_correct = attempt_question(question, required_concepts, correct_solution, explanation, formulas)
 
     return {
         'status': 200,

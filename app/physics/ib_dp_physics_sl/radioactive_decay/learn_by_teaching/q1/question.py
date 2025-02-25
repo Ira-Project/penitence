@@ -14,4 +14,3 @@ required_concepts = [
     concept_questions[0],
     concept_questions[1]
 ]
-required_formulas = []

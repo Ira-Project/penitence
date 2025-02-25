@@ -76,14 +76,25 @@ def attempt_question(question, required_concepts, correct_solution, provided_con
     start_ind = 1
     for concept_question in required_concepts:
         concepts_string += f"{str(start_ind)}) required_concept_question: {concept_question}\n"
-        concepts_string += f"required_concept_answer: {concept_answers[concept_question]['concept_answer']}\n"
-        concepts_string += f"required_concept_formula: {concept_answers[concept_question]['concept_formula']}\n"
+        if concept_answers[concept_question]['concept_answer'] != "":
+            concepts_string += f"required_concept_answer: {concept_answers[concept_question]['concept_answer']}"
+            if concept_answers[concept_question]['concept_formula']:
+                for f in concept_answers[concept_question]['concept_formula']:
+                    concepts_string += f" OR\nrequired_concept_answer: {f}\n"
+            else:
+                concepts_string += "\n"
+        else:
+            for f in concept_answers[concept_question]['concept_formula']:
+                if f == concept_answers[concept_question]['concept_formula'][-1]:
+                    concepts_string += f"required_concept_answer: {f}\n"
+                else:
+                    concepts_string += f"required_concept_answer: {f} OR\n"
         concepts_string += f"required_concept_missing: {concept_missing[concept_question]}\n"
         start_ind += 1
 
     messages = [{"role": "system", "content": ai_student_instructions_question + question + "\n\n" + ai_student_instructions_required_concepts_and_formulas + \
                 concepts_string + "\n\n" + correct_solution + "\n\n" + ai_student_instructions_pointers},
-        {"role": "user", "content": "Use the teacher's explanation to attempt the question. Till the teacher correctly mentions all the required_concept_answers AND/OR required_concept_formulas, you CANNOT give the correct solution. In the case that NONE of the required_concept_answers and required_concept_formulas are mentioned, you must state that you do not know how to solve the question. Never mention the required concept answers or formulas.\n" + "The teacher states that:\n" + provided_concepts + "\n" + "The teacher also provides the following formulas:\n" + provided_formulas}
+        {"role": "user", "content": "In first person, use the teacher's explanation to attempt the question in steps. Till the teacher correctly mentions ANY ONE of the 'required_concept_answers' for EVERY 'required_concept_question', you CANNOT give the correct solution. Never state ANY OF THE 'required_concept_answers'.\n" + "The teacher explains that:\n" + provided_concepts + "\n" + "The teacher also provides the following formulas:\n" + provided_formulas}
     ]
 
     response = client.chat.completions.create(

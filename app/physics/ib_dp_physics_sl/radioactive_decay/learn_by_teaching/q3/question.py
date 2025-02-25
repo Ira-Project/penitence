@@ -16,9 +16,7 @@ answer_type = "single_correct"
 
 answer_output = insert_latex("91")
 required_concepts = [
-    concept_questions[5],
     concept_questions[6],
     concept_questions[7],
     concept_questions[8]
 ]
-required_formulas = []

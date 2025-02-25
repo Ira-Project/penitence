@@ -10,7 +10,7 @@ element_symbol = "X"
 element_notation = insert_latex("^{" + num_protons + "}_{" + num_nucleons + "}" + element_symbol)
 mass_nucleon = insert_latex("1 u")
 
-question = ("A radioactive element {element_notation} has a rest mass of {rest_mass}. Assuming that the rest mass of a proton and a neutron is {mass_nucleon}, find the energy needed to separate the nucleons of {element_symbol}.").format(element_notation=element_notation, rest_mass=rest_mass, mass_nucleon=mass_nucleon, element_symbol=element_symbol)
+question = ("A radioactive nuclide {element_notation} has a rest mass of {rest_mass}. Assuming that the rest mass of a proton and a neutron is {mass_nucleon}, find the energy needed to separate the nucleons of {element_symbol}.").format(element_notation=element_notation, rest_mass=rest_mass, mass_nucleon=mass_nucleon, element_symbol=element_symbol)
 question_image = "No"
 answer_type = "single_correct"
 
@@ -18,8 +18,6 @@ answer_output = insert_latex("2.424 MeV")
 required_concepts = [
     concept_questions[2],
     concept_questions[3],
-    concept_questions[4]
-]
-required_formulas = [
-    concept_formulas[0]
+    concept_questions[4],
+    concept_questions[5]
 ]

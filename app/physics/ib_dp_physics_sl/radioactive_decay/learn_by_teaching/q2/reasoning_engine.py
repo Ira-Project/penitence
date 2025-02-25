@@ -20,8 +20,7 @@ async def compute_q2(input: InputModel):
         $!$E = \\Delta m\\,c^2 = (0.002603\\,u)\\,c^2 \\approx 0.002603 \\times 931.5\\,MeV \\approx 2.424\\,MeV.$!$
         Correct Answer: $!$2.424\\,MeV$!$"""
 
-    working, answer, is_correct = attempt_question(
-        question, required_concepts, required_formulas, correct_solution, explanation, formulas)
+    working, answer, is_correct = attempt_question(question, required_concepts, correct_solution, explanation, formulas)
 
     return {
         'status': 200,
