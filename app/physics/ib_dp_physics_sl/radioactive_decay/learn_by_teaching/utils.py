@@ -94,7 +94,7 @@ def attempt_question(question, required_concepts, correct_solution, provided_con
 
     messages = [{"role": "system", "content": ai_student_instructions_question + question + "\n\n" + ai_student_instructions_required_concepts_and_formulas + \
                 concepts_string + "\n\n" + correct_solution + "\n\n" + ai_student_instructions_pointers},
-        {"role": "user", "content": "In first person, use the teacher's explanation to attempt the question in steps. Till the teacher correctly mentions ANY ONE of the 'required_concept_answers' for EVERY 'required_concept_question', you CANNOT give the correct solution. Never state ANY OF THE 'required_concept_answers'.\n" + "The teacher explains that:\n" + provided_concepts + "\n" + "The teacher also provides the following formulas:\n" + provided_formulas}
+        {"role": "user", "content": "In first person, use the teacher's explanation to attempt the question in steps. Till the teacher correctly mentions ANY ONE of the 'required_concept_answers' for EVERY 'required_concept_question', you have to give incorrect or incomplete solutions. Never state ANY OF THE 'required_concept_answers'.\n" + "The teacher explains that:\n" + provided_concepts + "\n" + "The teacher also provides the following formulas:\n" + provided_formulas}
     ]
 
     response = client.chat.completions.create(
