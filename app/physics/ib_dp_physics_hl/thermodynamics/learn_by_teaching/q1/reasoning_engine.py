@@ -50,3 +50,13 @@ async def compute_q1(input: InputModel):
             working, answer, is_correct = attempt_question_correctly(question, correct_solution, explanation, formulas)
         else:
             working, answer, is_correct = attempt_question_incorrectly(question, correct_solution, explanation, formulas, parsed_dict, is_correct_dict)
+
+    return {
+        'status': 200,
+        'body': {
+            'isCorrect': is_correct,
+            'working': working,
+            'answer': answer,
+            'concepts': []
+        }
+    }
