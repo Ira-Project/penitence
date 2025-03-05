@@ -15,7 +15,7 @@ async def question1(
 ):
     question = data.question
     selected_concepts = "\n".join(
-        data.highlights) + "\n" + "\n".join(data.formula)
+        data.highlights) + "\n" + "\n".join(data.formulas)
     return await compute_q1(selected_concepts, question)
 
 
@@ -25,7 +25,7 @@ async def question2(
 ):
     question = data.question
     selected_concepts = "\n".join(
-        data.highlights) + "\n" + "\n".join(data.formula)
+        data.highlights) + "\n" + "\n".join(data.formulas)
     return await compute_q2(selected_concepts, question)
 
 
@@ -35,5 +35,5 @@ async def question3(
 ):
     question = data.question
     selected_concepts = "\n".join(
-        data.highlights) + "\n" + "\n".join(data.formula)
+        data.highlights) + "\n" + "\n".join(data.formulas)
     return await compute_q3(selected_concepts, question)

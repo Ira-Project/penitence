@@ -40,10 +40,9 @@ def get_required_concepts(passage, question):
 def attempt_question(required_concepts, question, given_concepts):
 
     messages = [{"role": "developer", "content": attempt_question_instructions_question + question + "\n" + \
-                attempt_question_instructions_concepts + required_concepts + "\n" + \
                 attempt_question_instructions_response + attempt_question_instructions_pointers},
         {"role": "user", "content": "These are the concepts you have been given:\n" + given_concepts + "\n" + \
-         "You have to give incomplete solutions till I mention ALL the 'required_concepts' needed to solve the question. You are NOT ALLOWED to reveal the 'required_concepts' to the user."}
+         "You have to give incomplete solutions till I mention the concepts and formulas needed to solve the question. You are NOT ALLOWED to reveal the concepts and formulas to me. If the information provided by me is sufficient to solve the question, you should respond with the correct AND complete solution."}
     ]
 
     response = client.chat.completions.create(
@@ -80,7 +79,7 @@ def attempt_question(required_concepts, question, given_concepts):
 
     if response.choices[0].message.refusal:
         working = "I was unable to attempt the question."
-        answer = ""
+        answer = "Could not compute."
         is_correct = False
         return working, answer, is_correct
     else:
@@ -93,9 +92,13 @@ def attempt_question(required_concepts, question, given_concepts):
             except:
                 working = working + "I was unable to attempt the question based on the provided explanation."
                 continue
-        answer = insert_latex(response_json["final_answer"])
+        if response_json["final_answer"] == "":
+            answer = "Could not compute"
+        else:
+            answer = insert_latex(response_json["final_answer"])
         is_correct = response_json["is_correct"]
         if working == "":
             working = "I was unable to attempt the question based on the provided explanation."
+
         return working, answer, is_correct
         

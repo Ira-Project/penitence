@@ -4,5 +4,5 @@ from pydantic import BaseModel
 
 class InputModel(BaseModel):
     highlights: List[str] = []
-    formula: List[str] = []
+    formulas: List[str] = []
     question: str
