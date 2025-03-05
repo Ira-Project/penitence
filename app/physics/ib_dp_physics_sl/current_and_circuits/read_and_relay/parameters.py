@@ -2,7 +2,7 @@ topic = "current_and_circuits"
 
 extract_concepts_model = "o3-mini"
 extract_concepts_instructions = "You have to select the concepts from the passage provided below that will be required to solve a question given by the user. The question might require multiple concepts. A concept is considered to be required ONLY IF it is directly needed to solve the question. Each concept can only be a single line from the passage provided above. Passage:\n"
-extract_concepts_response_format = "Your response should be in a JSON format with the following field: 'extracted_concepts'. The 'extracted_concepts' field will be an array of strings containing the concepts required to solve the question. Remember that each 'concept' is a single line from the passage provided above."
+extract_concepts_response_format = "Your response should be in a JSON format with the following field: 'extracted_concepts'. The 'extracted_concepts' field will be an array of strings containing the concepts required to solve the question. Remember that each 'concept' is a single line from the passage provided above, including LaTeX code and delimeters. But do not include any headings or titles while selecting the concepts."
 
 attempt_question_model = "o3-mini"
 attempt_question_instructions_question = "You have to attempt the following question on " + topic + ". You will be given an array of concepts by the user and using it, you will have to attempt the given question:\n"
@@ -11,5 +11,5 @@ attempt_question_instructions_response = "Your response should be a JSON format 
 attempt_question_instructions_pointers = "Till the user gives you ALL the required_concepts, you should keep giving an incomplete solution. Keep the following points in mind while giving your response:\n" + \
     "1) You should always respond in first person and address the user in second person.\n" + \
     "2) You should always present your calculations in LaTeX code. Do not enclose them in '$!$' delimiters.\n" + \
-    "3) For the missing 'required_concepts', first convey that you have understood the 'required_concept' that the user does provide and then ask the user a question. The question should be such that the answer will be the missing 'required_concept'. But while asking the question, NEVER reveal any part of the missing 'required_concept' to the user.\n" + \
+    "3) For the missing 'required_concepts', first convey that you have understood the 'required_concept' that the user does provide and then ask the user for a clarification. The clarification should be specific to the given question given above and asked in a way that the answer will be the missing 'required_concept'. But while asking the question, NEVER reveal any part of the missing 'required_concept' to the user.\n" + \
     "4) If NONE of the 'required_concepts' are present in the array provided by the user, you should simply respond that you are unable to attempt the question."
