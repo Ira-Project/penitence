@@ -1,0 +1,4 @@
+extract_concepts_model = "o3-mini"
+extract_concepts_instructions = "You have to extract all the concepts from the passage provided by the user. Each concept will consist of a 'concept_question' and a 'concept_answer'. The 'concept_question' should be specific and should ask only about a single body of knowledge. The 'concept_answer' will be the body of knowledge that answers the 'concept_question'."
+extract_concepts_response_format = "Your response should be in a JSON format with the following field: 'extracted_concepts'. The 'extracted_concepts' field will be an array of objects, each containing the following fields: 'concept_question' and 'concept_answer'. Do not include multiple concepts in a single object."
+extract_concepts_pointers = "Be careful to divide the passage into multiple concepts without overlapping. Do not include any headings or titles while selecting the concepts."
