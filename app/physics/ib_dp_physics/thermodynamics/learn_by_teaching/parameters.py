@@ -103,7 +103,7 @@ correct_solver_instructions_response = "Your response should be a JSON format wi
 correct_solver_instructions_pointers = "Keep these points in mind while giving your response:\n" + \
     "1) Your response should be only in first person and always address the user in second person.\n" + \
     "2) All your calculations must be in LaTeX code. Do not enclose them in '$!$' delimiters.\n" + \
-    "3) Any LaTeX code in the 'explanation' field should be enclosed in '$!$' delimiters with proper escape characters.\n" + \
+    "3) ALL LaTeX code in the 'explanation' field should be enclosed in '$!$' delimiters with proper escape characters.\n" + \
     "4) You have to use ONLY the explanation and formulas given by the user to arrive at a correct solution.\n"
 
 attempt_question_model = "o3-mini"
