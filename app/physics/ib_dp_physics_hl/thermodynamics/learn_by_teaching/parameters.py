@@ -21,7 +21,10 @@ concept_questions = [
     "what is an isochoric process?",
     "how do you calculate the internal energy of a gas?",
     "does internal energy of gas change when pressure, volume or temperature changes?",
-    "what is the law of conservation of energy in thermodynamics or the first law of thermodynamics?"
+    "what is the law of conservation of energy in thermodynamics or the first law of thermodynamics?",
+    "what is a macrostate?",
+    "what is a microstate?",
+    "what is the Boltzmann entropy formula?"
 ]
 
 concept_answers = {}
@@ -55,6 +58,15 @@ concept_answers[concept_questions[8]]["concept_formula"] = []
 concept_answers[concept_questions[9]] = {}
 concept_answers[concept_questions[9]]["concept_answer"] = "It states that heat change of a system is equal to the work done on or by the system plus the change in internal energy of the system."
 concept_answers[concept_questions[9]]["concept_formula"] = ["$!$Q = W + \\Delta U$!$"]
+concept_answers[concept_questions[10]] = {}
+concept_answers[concept_questions[10]]["concept_answer"] = "A macrostate is any observable or measurable state of a system, characterized by macroscopic properties like volume, temperature, etc."
+concept_answers[concept_questions[10]]["concept_formula"] = []
+concept_answers[concept_questions[11]] = {}
+concept_answers[concept_questions[11]]["concept_answer"] = "A given macrostate can be realized by multiple different microstates which are characterized by microscopic properties of the particles in the system."
+concept_answers[concept_questions[11]]["concept_formula"] = []
+concept_answers[concept_questions[12]] = {}
+concept_answers[concept_questions[12]]["concept_answer"] = "The Boltzmann entropy formula states that the entropy of a given macrostate of a system is proportional to the logarithm of the number of microstates that can realize that macrostate."
+concept_answers[concept_questions[12]]["concept_formula"] = ["$!$S = k_B \\ln W$!$"]
 
 parser_model = "gpt-4o-mini"
 parser_instructions_concepts = "You have been given the following 'concept_questions' and an array of 'possible_concept_answers' for each 'concept_question':\n"
