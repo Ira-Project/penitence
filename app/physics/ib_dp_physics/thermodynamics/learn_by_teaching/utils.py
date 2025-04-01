@@ -147,7 +147,7 @@ def attempt_question(question, required_concepts, correct_solution, provided_con
             working = "I was unable to attempt the question based on the provided explanation."
         return working, answer, is_correct
 
-def attempt_question_correctly(question, correct_solution, provided_concepts, provided_formulas):
+def attempt_question_correctly(question, correct_solution, provided_concepts, provided_formulas, insert_latex_final_answer=True):
     provided_explanation = "Explanation: " + provided_concepts + "\n" + "Formulas: " + provided_formulas
 
     messages = [{"role": "developer", "content": "Question: " + question + "\n\n" + correct_solution + "\n" + correct_solver_instructions_response},
@@ -200,7 +200,10 @@ def attempt_question_correctly(question, correct_solution, provided_concepts, pr
             except:
                 working = working + "I was unable to attempt the question based on the provided explanation."
                 continue
-        answer = insert_latex(response_json["final_answer"])
+        if insert_latex_final_answer:
+            answer = insert_latex(response_json["final_answer"])
+        else:
+            answer = response_json["final_answer"]
         is_correct = response_json["is_correct"]
         if working == "":
             working = "I was unable to attempt the question based on the provided explanation."

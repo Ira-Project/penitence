@@ -50,10 +50,10 @@ async def compute_q2(input: InputModel):
         all_correct = all(value for value in is_correct_dict.values())
         if all_correct:
             working, answer, is_correct = attempt_question_correctly(
-                question, correct_solution, explanation, formulas)
+                question, correct_solution, explanation, formulas, insert_latex_final_answer=False)
         else:
             working, answer, is_correct = attempt_question_incorrectly(
-                question, correct_solution, explanation, formulas, parsed_dict, is_correct_dict)
+                question, correct_solution, explanation, formulas, parsed_dict, is_correct_dict, insert_latex_final_answer=False)
 
     return {
         'status': 200,
