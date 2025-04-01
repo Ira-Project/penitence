@@ -20,7 +20,7 @@ def solve_question(question, required_concepts):
 
     messages = [{"role": "developer", "content": ai_solver_instructions_question + question + "\n\n" + ai_solver_instructions_concepts_and_formulas + \
                  concepts_string + "\n\n" + ai_solver_instructions_correct_answer_pointers},
-        {"role": "user", "content": "Solve the question by applying ALL the 'required_concepts' provided. Each step should apply only one 'required_concept'. You DO NOT need any other formula to solve the question."}
+        {"role": "user", "content": "Solve the question by applying ALL the 'required_concepts' provided. Each step should apply only one 'required_concept'. You DO NOT need any other formula to solve the question. Also, ensure that all LaTeX code is enclosed in '$!$' delimiters with proper escape characters."}
     ]
 
     response = client.chat.completions.create(
