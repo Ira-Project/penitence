@@ -6,7 +6,7 @@ from ......input_models import InputModel
 import random
 
 
-async def compute_q1(input: InputModel):
+async def compute_q2(input: InputModel):
     formulas = input.formula
     explanation = input.explanation
 
@@ -21,8 +21,9 @@ async def compute_q1(input: InputModel):
         \\Omega(0) = 1, \\Omega(1) = 2, \\Omega(2) = 1.
         Therefore, the most probable macrostate is n = 1.
         Correct Answer: One excited particle and one normal particle"""
-    
-    parsed_dict, is_correct_dict = parse_paragraph(explanation, formulas, required_concepts)
+
+    parsed_dict, is_correct_dict = parse_paragraph(
+        explanation, formulas, required_concepts)
     for concept_question in parsed_dict:
         if parsed_dict[concept_question] == "" and concept_question in concept_missing:
             parsed_dict[concept_question] = concept_missing[concept_question]
@@ -42,14 +43,17 @@ async def compute_q1(input: InputModel):
         answer = "Could not compute."
         is_correct = False
     elif atleast_one_empty:
-        working, answer, is_correct = attempt_question_incomplete(question, correct_solution, explanation, formulas, parsed_dict)
+        working, answer, is_correct = attempt_question_incomplete(
+            question, correct_solution, explanation, formulas, parsed_dict)
     else:
         # Check if all values in is_correct_dict are true
         all_correct = all(value for value in is_correct_dict.values())
         if all_correct:
-            working, answer, is_correct = attempt_question_correctly(question, correct_solution, explanation, formulas)
+            working, answer, is_correct = attempt_question_correctly(
+                question, correct_solution, explanation, formulas)
         else:
-            working, answer, is_correct = attempt_question_incorrectly(question, correct_solution, explanation, formulas, parsed_dict, is_correct_dict)
+            working, answer, is_correct = attempt_question_incorrectly(
+                question, correct_solution, explanation, formulas, parsed_dict, is_correct_dict)
 
     return {
         'status': 200,
