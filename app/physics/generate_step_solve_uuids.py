@@ -1,10 +1,12 @@
 import json
 import uuid
 
+
 def generate_short_uuid():
     return str(uuid.uuid4()).replace('-', '')[:21]
 
-path = 'ib_dp_physics_sl/thermal_energy_transfers/step_solve/step_solve.json'
+
+path = 'ib_dp_physics/thermal_energy_transfers/step_solve/step_solve.json'
 # Read the JSON file
 with open(path, 'r') as f:
     data = json.load(f)

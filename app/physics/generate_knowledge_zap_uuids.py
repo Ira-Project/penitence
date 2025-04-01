@@ -1,11 +1,13 @@
 import json
 import uuid
 
+
 def generate_uuid():
     return str(uuid.uuid4()).replace('-', '')[:21]
 
+
 # Read the JSON file
-path = "ib_dp_physics_sl/thermal_energy_transfers/knowledge_zap/knowledge_zap.json"
+path = "ib_dp_physics/thermal_energy_transfers/knowledge_zap/knowledge_zap.json"
 with open(path, 'r') as f:
     data = json.load(f)
 
