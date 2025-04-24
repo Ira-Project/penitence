@@ -55,6 +55,9 @@ async def compute_q2(input: InputModel):
             working, answer, is_correct = attempt_question_incorrectly(
                 question, correct_solution, explanation, formulas, parsed_dict, is_correct_dict, insert_latex_final_answer=False)
 
+    if is_correct:
+        answer = "One excited particle and one normal particle"
+
     return {
         'status': 200,
         'body': {
