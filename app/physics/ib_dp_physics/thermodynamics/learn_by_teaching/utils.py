@@ -9,6 +9,22 @@ latex_delimeter = "$!$"
 def insert_latex(str):
     return latex_delimeter + str + latex_delimeter
 
+def correct_latex_formatting(text):
+
+    text = text.replace(latex_delimeter, "MYLATEXDELIMETER")
+    # Replace faulty delimeters
+    text = text.replace("$!", "MYLATEXDELIMETER")
+    text = text.replace("!$", "MYLATEXDELIMETER")
+    text = text.replace("$", "MYLATEXDELIMETER")
+
+    # Restore delimeters
+    text = text.replace("MYLATEXDELIMETER", latex_delimeter)
+    text = text.replace("$!$$", latex_delimeter)
+    text = text.replace("!$!$", latex_delimeter)
+    text = text.replace("$!$!", latex_delimeter)
+    text = text.replace("$$!$", latex_delimeter)
+    return text
+
 def solve_question(question, required_concepts):
     concepts_string = ""
     start_ind = 1
@@ -20,7 +36,7 @@ def solve_question(question, required_concepts):
 
     messages = [{"role": "developer", "content": ai_solver_instructions_question + question + "\n\n" + ai_solver_instructions_concepts_and_formulas + \
                  concepts_string + "\n\n" + ai_solver_instructions_correct_answer_pointers},
-        {"role": "user", "content": "Solve the question by applying ALL the 'required_concepts' provided. Each step should apply only one 'required_concept'. You DO NOT need any other formula to solve the question. Also, ensure that all LaTeX code is enclosed in '$!$' delimiters with proper escape characters."}
+        {"role": "user", "content": "Solve the question by applying ALL the 'required_concepts' provided. Each step should apply only one 'required_concept'. You DO NOT need any other formula to solve the question."}
     ]
 
     response = client.chat.completions.create(
@@ -147,7 +163,7 @@ def attempt_question(question, required_concepts, correct_solution, provided_con
             working = "I was unable to attempt the question based on the provided explanation."
         return working, answer, is_correct
 
-def attempt_question_correctly(question, correct_solution, provided_concepts, provided_formulas, insert_latex_final_answer=True):
+def attempt_question_correctly(question, correct_solution, provided_concepts, provided_formulas):
     provided_explanation = "Explanation: " + provided_concepts + "\n" + "Formulas: " + provided_formulas
 
     messages = [{"role": "developer", "content": "Question: " + question + "\n\n" + correct_solution + "\n" + correct_solver_instructions_response},
@@ -195,15 +211,12 @@ def attempt_question_correctly(question, correct_solution, provided_concepts, pr
         working = ""
         for step in response_json["steps"]:
             try:
-                working = working + step["explanation"] + \
-                    "\n" + insert_latex(step["calculation"]) + "\n"
+                working = working + correct_latex_formatting(step["explanation"]) + \
+                    "\n" + correct_latex_formatting(step["calculation"]) + "\n"
             except:
                 working = working + "I was unable to attempt the question based on the provided explanation."
                 continue
-        if insert_latex_final_answer:
-            answer = insert_latex(response_json["final_answer"])
-        else:
-            answer = response_json["final_answer"]
+        answer = insert_latex(response_json["final_answer"])
         is_correct = response_json["is_correct"]
         if working == "":
             working = "I was unable to attempt the question based on the provided explanation."
@@ -212,17 +225,18 @@ def attempt_question_correctly(question, correct_solution, provided_concepts, pr
 def attempt_question_incorrectly(question, correct_solution, provided_concepts, provided_formulas, parsed_answers, is_parsed_answers_correct):
     
     provided_explanation = "Explanation: " + provided_concepts + "\n" + "Formulas: " + provided_formulas
-    incorrect_answers = "The following answers are incorrect:\n"
+    incorrect_answers = "The following concept question was answered incorrectly or not answered at all:\n"
+
     start_ind = 1
     for concept_question in parsed_answers:
         if not is_parsed_answers_correct[concept_question]:
-            incorrect_answers += f"{str(start_ind)}) {parsed_answers[concept_question]}\n"
+            incorrect_answers += f"{str(start_ind)}) {concept_question}\n"
             start_ind += 1
 
     messages = [{"role": "developer", "content": attempt_question_incorrectly_instructions_question + question + "\n\n" + attempt_question_incorrectly_instructions_correct_solution + \
                  correct_solution + "\n\n" + attempt_question_incorrectly_instructions_response + "\n" + attempt_question_incorrectly_instructions_pointers},
-        {"role": "user", "content": "Give me an incorrect solution to the question based on my explanation and formulas:\n" + provided_explanation + "\n" + incorrect_answers + \
-         "\n" + incorrect_answers + "\nDo not mention if my explanation or formulas are correct or incorrect."}
+        {"role": "user", "content": "Give me an incorrect solution to the question based on the explanation and formulas provided:\n" + provided_explanation + \
+         "\n" + incorrect_answers + "\nDO NOT MENTION whether your solution is incorrect or incomplete. Just give a solution that is incorrect or incomplete."}
     ]
 
     response = client.chat.completions.create(
@@ -266,8 +280,8 @@ def attempt_question_incorrectly(question, correct_solution, provided_concepts, 
         working = ""
         for step in response_json["steps"]:
             try:
-                working = working + step["explanation"] + \
-                    "\n" + insert_latex(step["calculation"]) + "\n"
+                working = working + correct_latex_formatting(step["explanation"]) + \
+                    "\n" + correct_latex_formatting(step["calculation"]) + "\n"
             except:
                 working = working + "I was unable to attempt the question based on the provided explanation."
                 continue
@@ -331,8 +345,8 @@ def attempt_question_incomplete(question, correct_solution, provided_concepts, p
         working = ""
         for step in response_json["steps"]:
             try:
-                working = working + step["explanation"] + \
-                    "\n" + insert_latex(step["calculation"]) + "\n"
+                working = working + correct_latex_formatting(step["explanation"]) + \
+                    "\n" + correct_latex_formatting(step["calculation"]) + "\n"
             except:
                 working = working + "I was unable to attempt the question based on the provided explanation."
                 continue
